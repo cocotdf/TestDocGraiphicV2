@@ -57,6 +57,8 @@
     }
 
     .graiphic-video-embed {
+      width: 70%;
+      max-width: 100%;
       margin: 1.25rem 0;
     }
 
@@ -256,6 +258,12 @@
 
       .content {
         left: var(--sidebar-width);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .graiphic-video-embed {
+        width: 100%;
       }
     }
   </style>
