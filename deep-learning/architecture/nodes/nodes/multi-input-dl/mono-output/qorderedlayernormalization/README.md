@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>QOrderedLayerNormalization applies a <a href="https://haibal.com/documentation/node-layer-normalization/">LayerNormalization</a> operation on quantized tensors.</p>
+<p>QOrderedLayerNormalization applies a <a href="../../multi-output/layernormalization-4/README.md">LayerNormalization</a> operation on quantized tensors.</p>
 
 <p align="center"><img alt="node_q_ordered_layer_norm.png" src="assets/node_q_ordered_layer_norm.png" width="299"/></p>
 

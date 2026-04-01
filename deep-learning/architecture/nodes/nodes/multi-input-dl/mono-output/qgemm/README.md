@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>Quantized <a href="https://haibal.com/documentation/node-gemm/">Gemm</a>.</p>
+<p>Quantized Gemm.</p>
 
 <p align="center"><img alt="node_q_gemm.png" src="assets/node_q_gemm.png" width="299"/></p>
 

@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>NhwcFusedConv is a <a href="https://haibal.com/documentation/node-conv/">Conv</a> operator with optional activation and add operators fused in.</p>
+<p>NhwcFusedConv is a Conv operator with optional activation and add operators fused in.</p>
 
 <p align="center"><img alt="input_interger_32.png" src="assets/input_interger_32.png" width="299"/></p>
 

@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>NhwcConv is a version of the standard <a href="https://haibal.com/documentation/node-conv/">convolution</a>, optimized for data with channels in the last dimension (NHWC) instead of the second (NCHW).</p>
+<p>NhwcConv is a version of the standard convolution, optimized for data with channels in the last dimension (NHWC) instead of the second (NCHW).</p>
 
 <p align="center"><img alt="input_interger_32.png" src="assets/input_interger_32.png" width="299"/></p>
 
