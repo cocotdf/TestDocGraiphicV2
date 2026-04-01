@@ -70,19 +70,19 @@
     }
 
     .graiphic-nav {
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .graiphic-nav-section + .graiphic-nav-section {
-      margin-top: 0.85rem;
+      margin-top: 0.55rem;
     }
 
     .graiphic-nav-section-title {
-      padding: 0.35rem 1.25rem 0.45rem;
+      padding: 0.2rem 0.9rem 0.3rem;
       color: #64748b;
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -102,21 +102,38 @@
       margin: 0;
     }
 
-    .graiphic-nav-link {
+    .graiphic-nav-link,
+    .graiphic-nav-toggle {
       display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      min-height: 2rem;
+      width: 100%;
+      align-items: flex-start;
+      gap: 0.3rem;
+      min-height: 1.55rem;
+      padding-top: 0.16rem;
+      padding-bottom: 0.16rem;
       border-left: 2px solid transparent;
       text-decoration: none;
+      line-height: 1.25;
       transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
 
-    .graiphic-nav-link:hover {
+    .graiphic-nav-link:hover,
+    .graiphic-nav-toggle:hover {
       background: #f8fafc;
       text-decoration: none;
     }
 
+    .graiphic-nav-toggle {
+      background: transparent;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .graiphic-nav-toggle.is-category,
     .graiphic-nav-link.is-category {
       color: #56a06c;
       font-weight: 500;
@@ -127,7 +144,8 @@
       font-weight: 500;
     }
 
-    .graiphic-nav-link.is-active {
+    .graiphic-nav-link.is-active,
+    .graiphic-nav-toggle.is-active {
       color: var(--theme-color);
       background: #f0fdfa;
       border-left-color: var(--theme-color);
@@ -135,16 +153,20 @@
     }
 
     .graiphic-nav-chevron {
-      width: 0.8rem;
-      flex: 0 0 0.8rem;
+      width: 0.65rem;
+      flex: 0 0 0.65rem;
       color: #94a3b8;
-      font-size: 0.72rem;
+      font-size: 0.64rem;
       text-align: center;
+      line-height: 1.2;
     }
 
     .graiphic-nav-label {
+      flex: 1 1 auto;
       min-width: 0;
-      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .cover-main > p:last-child a {
@@ -274,6 +296,7 @@
       }
 
       var listClass = depth === 0 ? "graiphic-nav-list" : "graiphic-nav-children";
+      var navState = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {} };
 
       return (
         '<ul class="' + listClass + '">' +
@@ -282,20 +305,58 @@
           var hasChildren = children.length > 0;
           var isCategory = hasChildren || node.kind === "category";
           var active = normalizeDocPath(node.path) === currentFile;
-          var open = hasChildren && isBranchOpen(node.path, currentFile);
-          var padding = 18 + depth * 18;
+          var open = hasChildren && (isBranchOpen(node.path, currentFile) || !!navState.expandedPaths[normalizeDocPath(node.path)]);
+          var padding = 10 + depth * 13;
           var chevron = hasChildren ? (open ? "v" : ">") : "";
-          var cssClass = "graiphic-nav-link " + (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
-          var linkHtml =
-            '<a class="' + cssClass + '" href="' + docsifyRouteForPath(node.path) + '" style="padding-left:' + padding + 'px">' +
-              '<span class="graiphic-nav-chevron">' + chevron + '</span>' +
-              '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
-            "</a>";
+          var cssClass = (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
+          var itemHtml = "";
+
+          if (isCategory) {
+            itemHtml =
+              '<button class="graiphic-nav-toggle ' + cssClass + '" type="button" data-nav-path="' + escapeHtml(normalizeDocPath(node.path)) + '" style="padding-left:' + padding + 'px">' +
+                '<span class="graiphic-nav-chevron">' + chevron + '</span>' +
+                '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
+              "</button>";
+          } else {
+            itemHtml =
+              '<a class="graiphic-nav-link ' + cssClass + '" href="' + docsifyRouteForPath(node.path) + '" style="padding-left:' + padding + 'px">' +
+                '<span class="graiphic-nav-chevron"></span>' +
+                '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
+              "</a>";
+          }
+
           var childrenHtml = open ? renderNavigationNodes(children, currentFile, depth + 1) : "";
-          return '<li class="graiphic-nav-item">' + linkHtml + childrenHtml + "</li>";
+          return '<li class="graiphic-nav-item">' + itemHtml + childrenHtml + "</li>";
         }).join("") +
         "</ul>"
       );
+    }
+
+    function bindSidebarNavigation(vm, navRoot) {
+      if (!navRoot || navRoot.__graiphicBound) {
+        return;
+      }
+
+      navRoot.addEventListener("click", function (event) {
+        var toggle = event.target.closest(".graiphic-nav-toggle[data-nav-path]");
+        if (!toggle) {
+          return;
+        }
+
+        event.preventDefault();
+        var currentFile = currentFileFromRoute(vm);
+        var path = normalizeDocPath(toggle.getAttribute("data-nav-path"));
+
+        if (isBranchOpen(path, currentFile)) {
+          return;
+        }
+
+        var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {} });
+        navState.expandedPaths[path] = !navState.expandedPaths[path];
+        renderSidebarNavigation(vm);
+      });
+
+      navRoot.__graiphicBound = true;
     }
 
     function renderSidebarNavigation(vm) {
@@ -317,6 +378,7 @@
       }
 
       var currentFile = currentFileFromRoute(vm);
+      bindSidebarNavigation(vm, navRoot);
       var html =
         '<div class="graiphic-nav">' +
         navData.sections.map(function (section) {
@@ -345,6 +407,7 @@
 
     function startDocsify(navData) {
       window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
+      window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {} };
 
       window.$docsify = {
         name: "Graiphic Documentation",
