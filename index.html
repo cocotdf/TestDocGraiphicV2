@@ -198,6 +198,24 @@
       overflow-wrap: break-word;
     }
 
+    .graiphic-nav-more-button {
+      width: 100%;
+      padding-top: 0.18rem;
+      padding-bottom: 0.18rem;
+      background: transparent;
+      border: 0;
+      color: #94a3b8;
+      font: inherit;
+      font-size: 0.92em;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .graiphic-nav-more-button:hover {
+      color: #64748b;
+      background: #f8fafc;
+    }
+
     .cover-main > p:last-child a {
       background: var(--theme-color);
       border-color: var(--theme-color);
@@ -355,17 +373,50 @@
       return new URL(resolvedPath.replace(/^\//, ""), window.location.href.split("#")[0]).href;
     }
 
-    function renderNavigationNodes(nodes, currentFile, depth) {
+    function renderNavigationNodes(nodes, currentFile, depth, parentPath) {
       if (!nodes || !nodes.length) {
         return "";
       }
 
       var listClass = depth === 0 ? "graiphic-nav-list" : "graiphic-nav-children";
-      var navState = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {} };
+      var navState = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} };
+      var pageLimit = 15;
+      var totalDirectPages = nodes.filter(function (node) {
+        var children = Array.isArray(node.children) ? node.children : [];
+        return !children.length && node.kind === "page";
+      }).length;
+      var articleGroupExpanded = parentPath ? !!navState.articleGroupsExpanded[parentPath] : false;
+      var shownDirectPages = 0;
+      var hiddenDirectPages = 0;
+      var visibleNodes = [];
+
+      nodes.forEach(function (node) {
+        var children = Array.isArray(node.children) ? node.children : [];
+        var isDirectPage = !children.length && node.kind === "page";
+        var active = normalizeDocPath(node.path) === currentFile;
+
+        if (
+          parentPath &&
+          totalDirectPages > pageLimit &&
+          isDirectPage &&
+          !articleGroupExpanded &&
+          shownDirectPages >= pageLimit &&
+          !active
+        ) {
+          hiddenDirectPages += 1;
+          return;
+        }
+
+        if (isDirectPage) {
+          shownDirectPages += 1;
+        }
+
+        visibleNodes.push(node);
+      });
 
       return (
         '<ul class="' + listClass + '">' +
-        nodes.map(function (node) {
+        visibleNodes.map(function (node) {
           var children = Array.isArray(node.children) ? node.children : [];
           var hasChildren = children.length > 0;
           var isCategory = hasChildren || node.kind === "category";
@@ -394,9 +445,18 @@
               "</a>";
           }
 
-          var childrenHtml = open ? renderNavigationNodes(children, currentFile, depth + 1) : "";
+          var childrenHtml = open ? renderNavigationNodes(children, currentFile, depth + 1, normalizedNodePath) : "";
           return '<li class="graiphic-nav-item">' + itemHtml + childrenHtml + "</li>";
         }).join("") +
+        (
+          parentPath && totalDirectPages > pageLimit
+            ? '<li class="graiphic-nav-item">' +
+                '<button class="graiphic-nav-more-button" type="button" data-group-path="' + escapeHtml(parentPath) + '" style="padding-left:' + (10 + depth * 13) + 'px">' +
+                  escapeHtml(articleGroupExpanded ? "Show Less Articles" : "Show All Articles (" + totalDirectPages + ")") +
+                "</button>" +
+              "</li>"
+            : ""
+        ) +
         "</ul>"
       );
     }
@@ -407,6 +467,16 @@
       }
 
       navRoot.addEventListener("click", function (event) {
+        var articleToggle = event.target.closest(".graiphic-nav-more-button[data-group-path]");
+        if (articleToggle) {
+          event.preventDefault();
+          var articlePath = normalizeDocPath(articleToggle.getAttribute("data-group-path"));
+          var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} });
+          navState.articleGroupsExpanded[articlePath] = !navState.articleGroupsExpanded[articlePath];
+          renderSidebarNavigation(vm);
+          return;
+        }
+
         var toggle = event.target.closest(".graiphic-nav-toggle[data-nav-path]");
         if (!toggle) {
           return;
@@ -416,7 +486,7 @@
         var currentFile = currentFileFromRoute(vm);
         var path = normalizeDocPath(toggle.getAttribute("data-nav-path"));
 
-        var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {}, collapsedPaths: {} });
+        var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} });
         var activeTrail = isBranchOpen(path, currentFile);
         var manuallyExpanded = !!navState.expandedPaths[path];
         var manuallyCollapsed = !!navState.collapsedPaths[path];
@@ -529,7 +599,7 @@
           return (
             '<section class="graiphic-nav-section">' +
               '<div class="graiphic-nav-section-title">' + escapeHtml(section.title) + "</div>" +
-              renderNavigationNodes(children, currentFile, 0) +
+              renderNavigationNodes(children, currentFile, 0, null) +
             "</section>"
           );
         }).join("") +
@@ -550,7 +620,7 @@
 
     function startDocsify(navData) {
       window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
-      window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {} };
+      window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} };
 
       window.$docsify = {
         name: "Graiphic Documentation",
