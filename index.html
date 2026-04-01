@@ -138,6 +138,25 @@
       return docsifyHref;
     }
 
+    function resolveLocalAssetUrl(rawUrl, currentFile) {
+      if (!rawUrl) {
+        return null;
+      }
+
+      if (
+        rawUrl.startsWith("#") ||
+        rawUrl.startsWith("data:") ||
+        rawUrl.startsWith("blob:") ||
+        /^(?:[a-z]+:)?\/\//i.test(rawUrl)
+      ) {
+        return null;
+      }
+
+      var currentDir = currentFile.replace(/[^/]*$/, "");
+      var resolvedPath = new URL(rawUrl, "https://graiphic.local" + currentDir).pathname.replace(/\/+/g, "/");
+      return new URL(resolvedPath.replace(/^\//, ""), window.location.href.split("#")[0]).href;
+    }
+
     window.$docsify = {
       name: "Graiphic Documentation",
       repo: "cocotdf/TestDocGraiphicV2",
@@ -161,6 +180,21 @@
       },
       plugins: [
         function (hook, vm) {
+          hook.beforeEach(function (markdown) {
+            var currentFile = currentFileFromRoute(vm);
+
+            return markdown.replace(
+              /(<img\b[^>]*\bsrc=["'])([^"']+)(["'][^>]*>)/gi,
+              function (match, prefix, rawSrc, suffix) {
+                var rewrittenSrc = resolveLocalAssetUrl(rawSrc, currentFile);
+                if (!rewrittenSrc) {
+                  return match;
+                }
+                return prefix + rewrittenSrc + suffix;
+              }
+            );
+          });
+
           hook.doneEach(function () {
             var currentFile = currentFileFromRoute(vm);
             document.querySelectorAll(".markdown-section a[href]").forEach(function (anchor) {
@@ -185,4 +219,3 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
-
