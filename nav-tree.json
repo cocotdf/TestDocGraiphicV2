@@ -97,8 +97,26 @@
               "kind": "category",
               "children": [
                 {
-                  "title": "FAQ",
-                  "path": "/accelerator/quick_start-general/faq/README.md",
+                  "title": "Introduction",
+                  "path": "/accelerator/quick_start-general/introduction/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Beginner’s Guide",
+                  "path": "/accelerator/quick_start-general/beginners-guide/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Examples Guide",
+                  "path": "/accelerator/quick_start-general/examples-guide/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Hardware Compatibility",
+                  "path": "/accelerator/quick_start-general/hardware-compatibility/README.md",
                   "kind": "page",
                   "children": []
                 },
@@ -115,26 +133,8 @@
                   "children": []
                 },
                 {
-                  "title": "Examples Guide",
-                  "path": "/accelerator/quick_start-general/examples-guide/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Beginner’s Guide",
-                  "path": "/accelerator/quick_start-general/beginners-guide/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Introduction",
-                  "path": "/accelerator/quick_start-general/introduction/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Hardware Compatibility",
-                  "path": "/accelerator/quick_start-general/hardware-compatibility/README.md",
+                  "title": "FAQ",
+                  "path": "/accelerator/quick_start-general/faq/README.md",
                   "kind": "page",
                   "children": []
                 }
@@ -746,26 +746,8 @@
               "kind": "category",
               "children": [
                 {
-                  "title": "Troubleshooting",
-                  "path": "/deep-learning/general/troubleshooting/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "FAQ",
-                  "path": "/deep-learning/general/faq/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Deployment",
-                  "path": "/deep-learning/general/deployment/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Examples Guide",
-                  "path": "/deep-learning/general/examples-guide/README.md",
+                  "title": "Introduction",
+                  "path": "/deep-learning/general/introduction/README.md",
                   "kind": "page",
                   "children": []
                 },
@@ -776,14 +758,32 @@
                   "children": []
                 },
                 {
-                  "title": "Introduction",
-                  "path": "/deep-learning/general/introduction/README.md",
+                  "title": "Examples Guide",
+                  "path": "/deep-learning/general/examples-guide/README.md",
                   "kind": "page",
                   "children": []
                 },
                 {
                   "title": "Hardware Compatibility",
                   "path": "/deep-learning/general/hardware-compatibility/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Deployment",
+                  "path": "/deep-learning/general/deployment/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Troubleshooting",
+                  "path": "/deep-learning/general/troubleshooting/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "FAQ",
+                  "path": "/deep-learning/general/faq/README.md",
                   "kind": "page",
                   "children": []
                 }
@@ -7505,8 +7505,14 @@
               "kind": "category",
               "children": [
                 {
-                  "title": "Deployment",
-                  "path": "/computer-vision/general-computer-vision/deployment/README.md",
+                  "title": "Introduction",
+                  "path": "/computer-vision/general-computer-vision/introduction/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Beginner’s Guide",
+                  "path": "/computer-vision/general-computer-vision/beginners-guide/README.md",
                   "kind": "page",
                   "children": []
                 },
@@ -7517,26 +7523,20 @@
                   "children": []
                 },
                 {
+                  "title": "Deployment",
+                  "path": "/computer-vision/general-computer-vision/deployment/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
                   "title": "Troubleshooting",
                   "path": "/computer-vision/general-computer-vision/troubleshooting/README.md",
                   "kind": "page",
                   "children": []
                 },
                 {
-                  "title": "Introduction",
-                  "path": "/computer-vision/general-computer-vision/introduction/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
                   "title": "FAQ",
                   "path": "/computer-vision/general-computer-vision/faq/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Beginner’s Guide",
-                  "path": "/computer-vision/general-computer-vision/beginners-guide/README.md",
                   "kind": "page",
                   "children": []
                 }
@@ -8415,8 +8415,14 @@
               "kind": "category",
               "children": [
                 {
-                  "title": "FAQ",
-                  "path": "/cuda/general-cuda/faq/README.md",
+                  "title": "Introduction",
+                  "path": "/cuda/general-cuda/introduction/README.md",
+                  "kind": "page",
+                  "children": []
+                },
+                {
+                  "title": "Beginner’s Guide",
+                  "path": "/cuda/general-cuda/beginners-guide/README.md",
                   "kind": "page",
                   "children": []
                 },
@@ -8433,14 +8439,8 @@
                   "children": []
                 },
                 {
-                  "title": "Beginner’s Guide",
-                  "path": "/cuda/general-cuda/beginners-guide/README.md",
-                  "kind": "page",
-                  "children": []
-                },
-                {
-                  "title": "Introduction",
-                  "path": "/cuda/general-cuda/introduction/README.md",
+                  "title": "FAQ",
+                  "path": "/cuda/general-cuda/faq/README.md",
                   "kind": "page",
                   "children": []
                 }
