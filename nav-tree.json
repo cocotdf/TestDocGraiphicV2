@@ -9224,49 +9224,6 @@
               ]
             }
           ]
-        },
-        {
-          "title": "Iconography",
-          "path": "/iconography/README.md",
-          "kind": "category",
-          "children": [
-            {
-              "title": "Polymorphics",
-              "path": "/iconography/polymorphics/README.md",
-              "kind": "page",
-              "children": []
-            },
-            {
-              "title": "Set Parameters",
-              "path": "/iconography/set-parameters/README.md",
-              "kind": "page",
-              "children": []
-            },
-            {
-              "title": "Get Parameters",
-              "path": "/iconography/get-parameters/README.md",
-              "kind": "page",
-              "children": []
-            },
-            {
-              "title": "Operation",
-              "path": "/iconography/operation/README.md",
-              "kind": "page",
-              "children": []
-            },
-            {
-              "title": "Layers",
-              "path": "/iconography/layers/README.md",
-              "kind": "page",
-              "children": []
-            },
-            {
-              "title": "Meaning of the colors",
-              "path": "/iconography/meaning-of-the-colors/README.md",
-              "kind": "page",
-              "children": []
-            }
-          ]
         }
       ]
     },
@@ -10799,13 +10756,6 @@
     "/deep-learning/runtime/output/training-output-dl/training-multi-output-dl/output-training-multi-2d/README.md",
     "/deep-learning/runtime/output/training-output-dl/training-multi-output-dl/output-training-multi-1d/README.md",
     "/deep-learning/runtime/close/README.md",
-    "/iconography/README.md",
-    "/iconography/polymorphics/README.md",
-    "/iconography/set-parameters/README.md",
-    "/iconography/get-parameters/README.md",
-    "/iconography/operation/README.md",
-    "/iconography/layers/README.md",
-    "/iconography/meaning-of-the-colors/README.md",
     "/sota/README.md",
     "/sota/general-sota/README.md",
     "/sota/general-sota/introduction-sota/README.md",
