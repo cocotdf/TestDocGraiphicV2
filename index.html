@@ -65,6 +65,88 @@
       padding: 0.75rem 0.9rem;
     }
 
+    .sidebar-nav {
+      padding: 1rem 0 2rem;
+    }
+
+    .graiphic-nav {
+      font-size: 15px;
+    }
+
+    .graiphic-nav-section + .graiphic-nav-section {
+      margin-top: 0.85rem;
+    }
+
+    .graiphic-nav-section-title {
+      padding: 0.35rem 1.25rem 0.45rem;
+      color: #64748b;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .graiphic-nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .graiphic-nav-children {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .graiphic-nav-item {
+      margin: 0;
+    }
+
+    .graiphic-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 2rem;
+      border-left: 2px solid transparent;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .graiphic-nav-link:hover {
+      background: #f8fafc;
+      text-decoration: none;
+    }
+
+    .graiphic-nav-link.is-category {
+      color: #56a06c;
+      font-weight: 500;
+    }
+
+    .graiphic-nav-link.is-page {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    .graiphic-nav-link.is-active {
+      color: var(--theme-color);
+      background: #f0fdfa;
+      border-left-color: var(--theme-color);
+      font-weight: 700;
+    }
+
+    .graiphic-nav-chevron {
+      width: 0.8rem;
+      flex: 0 0 0.8rem;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    .graiphic-nav-label {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
     .cover-main > p:last-child a {
       background: var(--theme-color);
       border-color: var(--theme-color);
@@ -74,18 +156,52 @@
 <body>
   <div id="app">Loading documentation...</div>
   <script>
+    function normalizeDocPath(path) {
+      var normalized = path || "/README.md";
+      normalized = normalized.split("?")[0].split("#")[0];
+
+      if (!normalized.startsWith("/")) {
+        normalized = "/" + normalized;
+      }
+
+      if (!/\.md$/i.test(normalized)) {
+        if (!normalized.endsWith("/")) {
+          normalized += "/";
+        }
+        normalized += "README.md";
+      }
+
+      return normalized.replace(/\/+/g, "/");
+    }
+
     function currentFileFromRoute(vm) {
       var current = vm.route && (vm.route.file || vm.route.path) ? (vm.route.file || vm.route.path) : "/README.md";
-      if (!current.startsWith("/")) {
-        current = "/" + current;
+      return normalizeDocPath(current);
+    }
+
+    function docsifyRouteForPath(path) {
+      return "#" + normalizeDocPath(path);
+    }
+
+    function docDirectoryPrefix(path) {
+      return normalizeDocPath(path).replace(/README\.md$/i, "");
+    }
+
+    function isBranchOpen(path, currentFile) {
+      var normalizedPath = normalizeDocPath(path);
+      if (normalizedPath === currentFile) {
+        return true;
       }
-      if (!/\.md(?:$|\?)/i.test(current)) {
-        if (!current.endsWith("/")) {
-          current += "/";
-        }
-        current += "README.md";
-      }
-      return current;
+      return currentFile.startsWith(docDirectoryPrefix(path));
+    }
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
     }
 
     function resolveLocalDocLink(rawHref, currentFile) {
@@ -152,65 +268,170 @@
       return new URL(resolvedPath.replace(/^\//, ""), window.location.href.split("#")[0]).href;
     }
 
-    window.$docsify = {
-      name: "Graiphic Documentation",
-      repo: "cocotdf/TestDocGraiphicV2",
-      homepage: "README.md",
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 2,
-      auto2top: true,
-      maxLevel: 3,
-      relativePath: true,
-      alias: {
-        "/.*/_sidebar.md": "/_sidebar.md",
-        "/.*/_navbar.md": "/_navbar.md"
-      },
-      search: {
-        paths: "auto",
-        placeholder: "Search in the documentation",
-        noData: "No matching page found",
-        depth: 4,
-        hideOtherSidebarContent: true
-      },
-      plugins: [
-        function (hook, vm) {
-          hook.beforeEach(function (markdown) {
-            var currentFile = currentFileFromRoute(vm);
+    function renderNavigationNodes(nodes, currentFile, depth) {
+      if (!nodes || !nodes.length) {
+        return "";
+      }
 
-            return markdown.replace(
-              /(<img\b[^>]*\bsrc=["'])([^"']+)(["'][^>]*>)/gi,
-              function (match, prefix, rawSrc, suffix) {
-                var rewrittenSrc = resolveLocalAssetUrl(rawSrc, currentFile);
-                if (!rewrittenSrc) {
-                  return match;
+      var listClass = depth === 0 ? "graiphic-nav-list" : "graiphic-nav-children";
+
+      return (
+        '<ul class="' + listClass + '">' +
+        nodes.map(function (node) {
+          var children = Array.isArray(node.children) ? node.children : [];
+          var hasChildren = children.length > 0;
+          var isCategory = hasChildren || node.kind === "category";
+          var active = normalizeDocPath(node.path) === currentFile;
+          var open = hasChildren && isBranchOpen(node.path, currentFile);
+          var padding = 18 + depth * 18;
+          var chevron = hasChildren ? (open ? "v" : ">") : "";
+          var cssClass = "graiphic-nav-link " + (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
+          var linkHtml =
+            '<a class="' + cssClass + '" href="' + docsifyRouteForPath(node.path) + '" style="padding-left:' + padding + 'px">' +
+              '<span class="graiphic-nav-chevron">' + chevron + '</span>' +
+              '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
+            "</a>";
+          var childrenHtml = open ? renderNavigationNodes(children, currentFile, depth + 1) : "";
+          return '<li class="graiphic-nav-item">' + linkHtml + childrenHtml + "</li>";
+        }).join("") +
+        "</ul>"
+      );
+    }
+
+    function renderSidebarNavigation(vm) {
+      var navData = window.__GRAIPHIC_NAV__;
+      if (!navData || !Array.isArray(navData.sections)) {
+        return;
+      }
+
+      var sidebar = document.querySelector(".sidebar");
+      if (!sidebar) {
+        return;
+      }
+
+      var navRoot = sidebar.querySelector(".sidebar-nav");
+      if (!navRoot) {
+        navRoot = document.createElement("nav");
+        navRoot.className = "sidebar-nav";
+        sidebar.appendChild(navRoot);
+      }
+
+      var currentFile = currentFileFromRoute(vm);
+      var html =
+        '<div class="graiphic-nav">' +
+        navData.sections.map(function (section) {
+          var children = Array.isArray(section.children) ? section.children : [];
+          return (
+            '<section class="graiphic-nav-section">' +
+              '<div class="graiphic-nav-section-title">' + escapeHtml(section.title) + "</div>" +
+              renderNavigationNodes(children, currentFile, 0) +
+            "</section>"
+          );
+        }).join("") +
+        "</div>";
+
+      navRoot.innerHTML = html;
+    }
+
+    function loadScript(src) {
+      return new Promise(function (resolve, reject) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+    }
+
+    function startDocsify(navData) {
+      window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
+
+      window.$docsify = {
+        name: "Graiphic Documentation",
+        repo: "cocotdf/TestDocGraiphicV2",
+        homepage: "README.md",
+        loadSidebar: false,
+        loadNavbar: true,
+        subMaxLevel: 2,
+        auto2top: true,
+        maxLevel: 3,
+        relativePath: true,
+        alias: {
+          "/.*/_navbar.md": "/_navbar.md"
+        },
+        search: {
+          paths: window.__GRAIPHIC_NAV__.searchPaths || "auto",
+          placeholder: "Search in the documentation",
+          noData: "No matching page found",
+          depth: 4,
+          hideOtherSidebarContent: false
+        },
+        plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (markdown) {
+              var currentFile = currentFileFromRoute(vm);
+
+              return markdown.replace(
+                /(<img\b[^>]*\bsrc=["'])([^"']+)(["'][^>]*>)/gi,
+                function (match, prefix, rawSrc, suffix) {
+                  var rewrittenSrc = resolveLocalAssetUrl(rawSrc, currentFile);
+                  if (!rewrittenSrc) {
+                    return match;
+                  }
+                  return prefix + rewrittenSrc + suffix;
                 }
-                return prefix + rewrittenSrc + suffix;
-              }
-            );
-          });
-
-          hook.doneEach(function () {
-            var currentFile = currentFileFromRoute(vm);
-            document.querySelectorAll(".markdown-section a[href]").forEach(function (anchor) {
-              var rawHref = anchor.getAttribute("href");
-              var rewrittenHref = resolveLocalDocLink(rawHref, currentFile);
-              if (rewrittenHref) {
-                anchor.setAttribute("href", rewrittenHref);
-                return;
-              }
-
-              if (/^https?:\/\//i.test(rawHref)) {
-                anchor.setAttribute("target", "_blank");
-                anchor.setAttribute("rel", "noopener noreferrer");
-              }
+              );
             });
-          });
+
+            hook.mounted(function () {
+              renderSidebarNavigation(vm);
+            });
+
+            hook.doneEach(function () {
+              var currentFile = currentFileFromRoute(vm);
+              document.querySelectorAll(".markdown-section a[href], .cover-main a[href], .app-nav a[href]").forEach(function (anchor) {
+                var rawHref = anchor.getAttribute("href");
+                var rewrittenHref = resolveLocalDocLink(rawHref, currentFile);
+                if (rewrittenHref) {
+                  anchor.setAttribute("href", rewrittenHref);
+                  return;
+                }
+
+                if (/^https?:\/\//i.test(rawHref)) {
+                  anchor.setAttribute("target", "_blank");
+                  anchor.setAttribute("rel", "noopener noreferrer");
+                }
+              });
+
+              renderSidebarNavigation(vm);
+            });
+          }
+        ]
+      };
+
+      loadScript("https://cdn.jsdelivr.net/npm/docsify@4")
+        .then(function () {
+          return loadScript("https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js");
+        })
+        .catch(function (error) {
+          console.error("Failed to load Docsify assets", error);
+        });
+    }
+
+    fetch("nav-tree.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load navigation manifest");
         }
-      ]
-    };
+        return response.json();
+      })
+      .then(function (navData) {
+        startDocsify(navData);
+      })
+      .catch(function (error) {
+        console.warn("Navigation manifest unavailable, falling back to default search paths.", error);
+        startDocsify({ sections: [], searchPaths: "auto" });
+      });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
