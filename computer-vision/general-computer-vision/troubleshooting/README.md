@@ -2,32 +2,34 @@
 
 <p>This section presents the different errors that can appear when using the library.</p>
 
-<p>Code</p>
-
-<p>VI</p>
-
-<p>Information</p>
-
-<p>6001</p>
-
-<p>check_cuda</p>
-
-<p>CUDA is not installed</p>
-
-<p>5050</p>
-
-<p>Licence not installed</p>
-
-<p>The licence is not installed so toolkit could not run.</p>
-
-<p>5051</p>
-
-<p>Licence expired</p>
-
-<p>Licence expired so toolkit could not run.</p>
-
-<p>5052</p>
-
-<p>Runtime Error</p>
-
-<p>Runtime Error could not run.</p>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Code</strong></th>
+      <th><strong>VI</strong></th>
+      <th><strong>Information</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6001</td>
+      <td>check_cuda</td>
+      <td>CUDA is not installed</td>
+    </tr>
+    <tr>
+      <td>5050</td>
+      <td>Licence not installed</td>
+      <td>The licence is not installed so toolkit could not run.</td>
+    </tr>
+    <tr>
+      <td>5051</td>
+      <td>Licence expired</td>
+      <td>Licence expired so toolkit could not run.</td>
+    </tr>
+    <tr>
+      <td>5052</td>
+      <td>Runtime Error</td>
+      <td>Runtime Error could not run.</td>
+    </tr>
+  </tbody>
+</table>
