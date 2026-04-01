@@ -361,7 +361,7 @@
       }
 
       var listClass = depth === 0 ? "graiphic-nav-list" : "graiphic-nav-children";
-      var navState = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {} };
+      var navState = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {} };
 
       return (
         '<ul class="' + listClass + '">' +
@@ -370,7 +370,11 @@
           var hasChildren = children.length > 0;
           var isCategory = hasChildren || node.kind === "category";
           var active = normalizeDocPath(node.path) === currentFile;
-          var open = hasChildren && (isBranchOpen(node.path, currentFile) || !!navState.expandedPaths[normalizeDocPath(node.path)]);
+          var normalizedNodePath = normalizeDocPath(node.path);
+          var activeTrail = isBranchOpen(node.path, currentFile);
+          var manuallyExpanded = !!navState.expandedPaths[normalizedNodePath];
+          var manuallyCollapsed = !!navState.collapsedPaths[normalizedNodePath];
+          var open = hasChildren && !manuallyCollapsed && (activeTrail || manuallyExpanded);
           var padding = 10 + depth * 13;
           var chevron = hasChildren ? (open ? "v" : ">") : "";
           var cssClass = (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
@@ -378,7 +382,7 @@
 
           if (isCategory) {
             itemHtml =
-              '<button class="graiphic-nav-toggle ' + cssClass + '" type="button" data-nav-path="' + escapeHtml(normalizeDocPath(node.path)) + '" style="padding-left:' + padding + 'px">' +
+              '<button class="graiphic-nav-toggle ' + cssClass + '" type="button" data-nav-path="' + escapeHtml(normalizedNodePath) + '" style="padding-left:' + padding + 'px">' +
                 '<span class="graiphic-nav-chevron">' + chevron + '</span>' +
                 '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
               "</button>";
@@ -412,12 +416,23 @@
         var currentFile = currentFileFromRoute(vm);
         var path = normalizeDocPath(toggle.getAttribute("data-nav-path"));
 
-        if (isBranchOpen(path, currentFile)) {
-          return;
+        var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {}, collapsedPaths: {} });
+        var activeTrail = isBranchOpen(path, currentFile);
+        var manuallyExpanded = !!navState.expandedPaths[path];
+        var manuallyCollapsed = !!navState.collapsedPaths[path];
+        var currentlyOpen = !manuallyCollapsed && (activeTrail || manuallyExpanded);
+
+        if (currentlyOpen) {
+          if (activeTrail) {
+            navState.collapsedPaths[path] = true;
+          } else {
+            delete navState.expandedPaths[path];
+          }
+        } else {
+          delete navState.collapsedPaths[path];
+          navState.expandedPaths[path] = true;
         }
 
-        var navState = window.__GRAIPHIC_NAV_STATE__ || (window.__GRAIPHIC_NAV_STATE__ = { expandedPaths: {} });
-        navState.expandedPaths[path] = !navState.expandedPaths[path];
         renderSidebarNavigation(vm);
       });
 
@@ -535,7 +550,7 @@
 
     function startDocsify(navData) {
       window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
-      window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {} };
+      window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {} };
 
       window.$docsify = {
         name: "Graiphic Documentation",
