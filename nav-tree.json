@@ -795,1042 +795,6 @@
               "kind": "category",
               "children": [
                 {
-                  "title": "Define",
-                  "path": "/deep-learning/architecture/define-deep-learning-architecture/README.md",
-                  "kind": "category",
-                  "children": [
-                    {
-                      "title": "Activations",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/resume-4/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "ELU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/elu/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Exponential",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/exponential/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "GELU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/gelu/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "HardSigmoid",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/hardsigmoid/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "LeakyReLU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/leakyrelu/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Linear",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/linear/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "ReLU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/relu/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SELU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/selu/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Sigmoid",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/sigmoid/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SoftMax",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softmax/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SoftPlus",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softplus/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SoftSign",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softsign/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Swish",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/swish/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "TanH",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/tanh/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "ThresholdedReLU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/thresholdedrelu/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Cells",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/resume-3/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "GRU",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/gru-3/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "LSTM",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/lstm-3/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SimpleRNN",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/simplernn-3/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Initializers",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/resume-8/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Constant",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/constant/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "GlorotNormal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/glorotnormal/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "GlorotUniform",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/glorotuniform/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "HeNormal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/henormal/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "HeUniform",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/heuniform/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Identity",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/identity/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "LecunNormal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/lecunnormal/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "LecunUniform",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/lecununiform/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Ones",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/ones/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Orthogonal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/orthogonal/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "RandomNormal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/randomnormal-2/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "RandomUnifom",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/randomunifom/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "TruncatedNormal",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/truncatednormal/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "VarianceScaling",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/variancescaling/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Zeros",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/zeros/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Losses",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/resume-9/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "BinaryCrossentropy",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/binarycrossentropy/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "CategoricalCrossentropy",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/categoricalcrossentropy/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "CategoricalHinge",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/categoricalhinge/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "CosineSimilarity",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/cosinesimilarity/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Hinge",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/hinge/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Huber",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/huber/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "KLDivergence",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/kldivergence/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "LogCosh",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/logcosh/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "MeanAbsoluteError",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meanabsoluteerror/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "MeanAbsolutePercentageError",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meanabsolutepercentageerror/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "MeanSquaredError",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meansquarederror/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "MeanSquaredLogarithmicError",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meansquaredlogarithmicerror/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Poisson",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/poisson/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SquaredHinge",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/squaredhinge/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Custom",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/custom/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Optimizers",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/resume-10/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Adam",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/adam/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "SGD",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/sgd/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Regularizers",
-                      "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Resume",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/resume-13/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "L1",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l1/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "L1L2",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l1l2/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "L2",
-                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l2/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "Get & Set",
-                  "path": "/deep-learning/architecture/get-set/README.md",
-                  "kind": "category",
-                  "children": [
-                    {
-                      "title": "Resume",
-                      "path": "/deep-learning/architecture/get-set/resume-6/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "Get",
-                      "path": "/deep-learning/architecture/get-set/get-deep-learning/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Label",
-                          "path": "/deep-learning/architecture/get-set/get-deep-learning/label/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Individual by name",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/individual-by-name/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Individual by index",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/individual-by-index/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "All",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/all/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Layer",
-                          "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "lda_coeff",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-lda-coeff-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-lda-coeff-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-all-lda-coeff/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Parameters",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-layer-params-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-layer-params-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-all-layer-params/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Training Status",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-train-status-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-train-status-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-all-train-status/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Model",
-                          "path": "/deep-learning/architecture/get-set/get-deep-learning/model/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Toolkit version",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/toolkit-version-model/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "GPU",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/gpu/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Warning Parameters",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/warning-parameters/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Name",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/name-3/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Shape",
-                          "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Layer",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Output by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/output-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Output by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/output-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All Outputs",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/all-outputs/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Input by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/input-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Input by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/input-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All Inputs",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/all-inputs/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "All Outputs Layers",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/all-outputs-layers/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "All Inputs Layers",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/all-inputs-layers/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Weight",
-                          "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Read",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-weights-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-weights-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-all-weights/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Shape",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-weights-shape-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-weights-shape-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-all-weights-shape/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Update",
-                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-update-weights-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-update-weights-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-all-update-weights/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Set",
-                      "path": "/deep-learning/architecture/get-set/set-deep-learning/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Layer",
-                          "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "lda_coeff",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-lda-coeff-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-lda-coeff-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-all-lda-coeff/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Training Status",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-train-status-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-train-status-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-all-train-status/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Model",
-                          "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Warning Parameters",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/set-warning-parameters/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Name",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/set-model-name/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Weight",
-                          "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Update",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-update-weights-by-name/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-update-weights-by-index/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-all-update-weights/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            },
-                            {
-                              "title": "Write",
-                              "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/README.md",
-                              "kind": "category",
-                              "children": [
-                                {
-                                  "title": "Individual by name",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/individual-by-name-8/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "Individual by index",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/individual-by-index-8/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "PNG File",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/png-file/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "JPEG File",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/jpeg-file/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "JPEG2000 File",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/jpeg2000-file/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "BMP File",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/bmp-file/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All (Name Array)",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-name-array/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All (Index Array)",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-index-array/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All (Random)",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-random/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                },
-                                {
-                                  "title": "All (Model)",
-                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-model/README.md",
-                                  "kind": "page",
-                                  "children": []
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "Graph Function",
-                  "path": "/deep-learning/architecture/graph-function/README.md",
-                  "kind": "category",
-                  "children": [
-                    {
-                      "title": "Resume",
-                      "path": "/deep-learning/architecture/graph-function/resume-2/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "File",
-                      "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "Convert",
-                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "TF SavedModel To ONNX",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/tf-savedmodel-to-onnx/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Pytorch To ONNX",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/pytorch-to-onnx/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "ONNX To TF SavedModel",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-tf-savedmodel/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "ONNX To Pytorch",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-pytorch/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "ONNX To Keras",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-keras/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "ONNX To H5",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-h5/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "Keras To ONNX",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/keras-to-onnx/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "H5 To ONNX",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/h5-to-onnx/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Save",
-                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/save/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "ONNX File",
-                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/save/onnx-file/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "title": "Load ONNX File",
-                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/load-onnx-file/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Graph",
-                      "path": "/deep-learning/architecture/graph-function/graph-deep-learning/README.md",
-                      "kind": "category",
-                      "children": [
-                        {
-                          "title": "One To Mult",
-                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/one-to-mult/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Merge",
-                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/merge/README.md",
-                          "kind": "page",
-                          "children": []
-                        },
-                        {
-                          "title": "Add Graph",
-                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/add-graph/README.md",
-                          "kind": "page",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Open Log Folder",
-                      "path": "/deep-learning/architecture/graph-function/open-log-folder/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "Reset GPU Device",
-                      "path": "/deep-learning/architecture/graph-function/reset-gpu-device/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "Toolkit Version",
-                      "path": "/deep-learning/architecture/graph-function/toolkit-version/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "Summary",
-                      "path": "/deep-learning/architecture/graph-function/summary/README.md",
-                      "kind": "page",
-                      "children": []
-                    },
-                    {
-                      "title": "Netron Summary",
-                      "path": "/deep-learning/architecture/graph-function/netron-summary/README.md",
-                      "kind": "page",
-                      "children": []
-                    }
-                  ]
-                },
-                {
                   "title": "Layers",
                   "path": "/deep-learning/architecture/layers/README.md",
                   "kind": "category",
@@ -2319,6 +1283,24 @@
                     {
                       "title": "Resume",
                       "path": "/deep-learning/architecture/nodes/resume/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Input",
+                      "path": "/deep-learning/architecture/nodes/input/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Predict Output",
+                      "path": "/deep-learning/architecture/nodes/predict-output/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Train Output",
+                      "path": "/deep-learning/architecture/nodes/train-output/README.md",
                       "kind": "page",
                       "children": []
                     },
@@ -3800,25 +2782,6 @@
                           ]
                         },
                         {
-                          "title": "Structure",
-                          "path": "/deep-learning/architecture/nodes/nodes/structure/README.md",
-                          "kind": "category",
-                          "children": [
-                            {
-                              "title": "Loop",
-                              "path": "/deep-learning/architecture/nodes/nodes/structure/loop/README.md",
-                              "kind": "page",
-                              "children": []
-                            },
-                            {
-                              "title": "If",
-                              "path": "/deep-learning/architecture/nodes/nodes/structure/if/README.md",
-                              "kind": "page",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
                           "title": "Variadic Input",
                           "path": "/deep-learning/architecture/nodes/nodes/variadic-input/README.md",
                           "kind": "category",
@@ -3874,6 +2837,25 @@
                             {
                               "title": "Concat",
                               "path": "/deep-learning/architecture/nodes/nodes/variadic-input/concat/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Structure",
+                          "path": "/deep-learning/architecture/nodes/nodes/structure/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Loop",
+                              "path": "/deep-learning/architecture/nodes/nodes/structure/loop/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "If",
+                              "path": "/deep-learning/architecture/nodes/nodes/structure/if/README.md",
                               "kind": "page",
                               "children": []
                             }
@@ -3955,24 +2937,1042 @@
                           ]
                         }
                       ]
-                    },
+                    }
+                  ]
+                },
+                {
+                  "title": "Graph Function",
+                  "path": "/deep-learning/architecture/graph-function/README.md",
+                  "kind": "category",
+                  "children": [
                     {
-                      "title": "Input",
-                      "path": "/deep-learning/architecture/nodes/input/README.md",
+                      "title": "Resume",
+                      "path": "/deep-learning/architecture/graph-function/resume-2/README.md",
                       "kind": "page",
                       "children": []
                     },
                     {
-                      "title": "Train Output",
-                      "path": "/deep-learning/architecture/nodes/train-output/README.md",
+                      "title": "Open Log Folder",
+                      "path": "/deep-learning/architecture/graph-function/open-log-folder/README.md",
                       "kind": "page",
                       "children": []
                     },
                     {
-                      "title": "Predict Output",
-                      "path": "/deep-learning/architecture/nodes/predict-output/README.md",
+                      "title": "Reset GPU Device",
+                      "path": "/deep-learning/architecture/graph-function/reset-gpu-device/README.md",
                       "kind": "page",
                       "children": []
+                    },
+                    {
+                      "title": "Toolkit Version",
+                      "path": "/deep-learning/architecture/graph-function/toolkit-version/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Summary",
+                      "path": "/deep-learning/architecture/graph-function/summary/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Netron Summary",
+                      "path": "/deep-learning/architecture/graph-function/netron-summary/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Graph",
+                      "path": "/deep-learning/architecture/graph-function/graph-deep-learning/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "One To Mult",
+                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/one-to-mult/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Merge",
+                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/merge/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Add Graph",
+                          "path": "/deep-learning/architecture/graph-function/graph-deep-learning/add-graph/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "File",
+                      "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Convert",
+                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "TF SavedModel To ONNX",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/tf-savedmodel-to-onnx/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Pytorch To ONNX",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/pytorch-to-onnx/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "ONNX To TF SavedModel",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-tf-savedmodel/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "ONNX To Pytorch",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-pytorch/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "ONNX To Keras",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-keras/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "ONNX To H5",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/onnx-to-h5/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Keras To ONNX",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/keras-to-onnx/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "H5 To ONNX",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/convert-graph-function/h5-to-onnx/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save",
+                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/save/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "ONNX File",
+                              "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/save/onnx-file/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Load ONNX File",
+                          "path": "/deep-learning/architecture/graph-function/file-graph-function-dl/load-onnx-file/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Get & Set",
+                  "path": "/deep-learning/architecture/get-set/README.md",
+                  "kind": "category",
+                  "children": [
+                    {
+                      "title": "Resume",
+                      "path": "/deep-learning/architecture/get-set/resume-6/README.md",
+                      "kind": "page",
+                      "children": []
+                    },
+                    {
+                      "title": "Get",
+                      "path": "/deep-learning/architecture/get-set/get-deep-learning/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Label",
+                          "path": "/deep-learning/architecture/get-set/get-deep-learning/label/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Individual by name",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/individual-by-name/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Individual by index",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/individual-by-index/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "All",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/label/all/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Layer",
+                          "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "lda_coeff",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-lda-coeff-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-lda-coeff-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/lda_coeff/get-all-lda-coeff/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Parameters",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-layer-params-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-layer-params-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/parameters/get-all-layer-params/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Training Status",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-train-status-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-train-status-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/layer-get-dl/training-status/get-all-train-status/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Model",
+                          "path": "/deep-learning/architecture/get-set/get-deep-learning/model/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Toolkit version",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/toolkit-version-model/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "GPU",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/gpu/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Warning Parameters",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/warning-parameters/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Name",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/model/name-3/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Shape",
+                          "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Layer",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Output by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/output-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Output by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/output-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All Outputs",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/all-outputs/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Input by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/input-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Input by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/input-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All Inputs",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/layer-shape-get/all-inputs/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "All Outputs Layers",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/all-outputs-layers/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "All Inputs Layers",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/shape/all-inputs-layers/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Weight",
+                          "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Read",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-weights-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-weights-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/read-weight-get/get-all-weights/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Shape",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-weights-shape-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-weights-shape-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/weight-shape-get/get-all-weights-shape/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Update",
+                              "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-update-weights-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-update-weights-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/get-deep-learning/weight-architecture-get/update-weight-get/get-all-update-weights/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Set",
+                      "path": "/deep-learning/architecture/get-set/set-deep-learning/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Layer",
+                          "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "lda_coeff",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-lda-coeff-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-lda-coeff-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/lda-coeff-set-dl/set-all-lda-coeff/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Training Status",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-train-status-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-train-status-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/layer-set-dl/training-status-set-dl/set-all-train-status/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Model",
+                          "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Warning Parameters",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/set-warning-parameters/README.md",
+                              "kind": "page",
+                              "children": []
+                            },
+                            {
+                              "title": "Name",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/model-get-dl/set-model-name/README.md",
+                              "kind": "page",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Weight",
+                          "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/README.md",
+                          "kind": "category",
+                          "children": [
+                            {
+                              "title": "Update",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-update-weights-by-name/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-update-weights-by-index/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/update-set-dl/set-all-update-weights/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Write",
+                              "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/README.md",
+                              "kind": "category",
+                              "children": [
+                                {
+                                  "title": "Individual by name",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/individual-by-name-8/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "Individual by index",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/individual-by-index-8/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "PNG File",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/png-file/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "JPEG File",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/jpeg-file/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "JPEG2000 File",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/jpeg2000-file/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "BMP File",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/bmp-file/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All (Name Array)",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-name-array/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All (Index Array)",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-index-array/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All (Random)",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-random/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                },
+                                {
+                                  "title": "All (Model)",
+                                  "path": "/deep-learning/architecture/get-set/set-deep-learning/weight-set-dl/write/all-model/README.md",
+                                  "kind": "page",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Define",
+                  "path": "/deep-learning/architecture/define-deep-learning-architecture/README.md",
+                  "kind": "category",
+                  "children": [
+                    {
+                      "title": "Activations",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/resume-4/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "ELU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/elu/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Exponential",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/exponential/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "GELU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/gelu/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "HardSigmoid",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/hardsigmoid/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "LeakyReLU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/leakyrelu/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Linear",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/linear/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "ReLU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/relu/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SELU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/selu/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Sigmoid",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/sigmoid/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SoftMax",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softmax/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SoftPlus",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softplus/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SoftSign",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/softsign/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Swish",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/swish/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "TanH",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/tanh/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "ThresholdedReLU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/activations/thresholdedrelu/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Initializers",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/resume-8/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Constant",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/constant/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "GlorotNormal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/glorotnormal/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "GlorotUniform",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/glorotuniform/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "HeNormal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/henormal/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "HeUniform",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/heuniform/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Identity",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/identity/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "LecunNormal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/lecunnormal/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "LecunUniform",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/lecununiform/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Ones",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/ones/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Orthogonal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/orthogonal/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "RandomNormal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/randomnormal-2/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "RandomUnifom",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/randomunifom/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "TruncatedNormal",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/truncatednormal/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "VarianceScaling",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/variancescaling/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Zeros",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/initializers/zeros/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Regularizers",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/resume-13/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "L1",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l1/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "L1L2",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l1l2/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "L2",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/regularizers/l2/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Cells",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/resume-3/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "GRU",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/gru-3/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "LSTM",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/lstm-3/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SimpleRNN",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/cells/simplernn-3/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Losses",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/resume-9/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "BinaryCrossentropy",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/binarycrossentropy/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "CategoricalCrossentropy",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/categoricalcrossentropy/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "CategoricalHinge",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/categoricalhinge/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "CosineSimilarity",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/cosinesimilarity/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Hinge",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/hinge/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Huber",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/huber/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "KLDivergence",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/kldivergence/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "LogCosh",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/logcosh/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "MeanAbsoluteError",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meanabsoluteerror/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "MeanAbsolutePercentageError",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meanabsolutepercentageerror/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "MeanSquaredError",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meansquarederror/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "MeanSquaredLogarithmicError",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/meansquaredlogarithmicerror/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Poisson",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/poisson/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SquaredHinge",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/squaredhinge/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Custom",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/losses/custom/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Optimizers",
+                      "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/README.md",
+                      "kind": "category",
+                      "children": [
+                        {
+                          "title": "Resume",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/resume-10/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "Adam",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/adam/README.md",
+                          "kind": "page",
+                          "children": []
+                        },
+                        {
+                          "title": "SGD",
+                          "path": "/deep-learning/architecture/define-deep-learning-architecture/optimizers/sgd/README.md",
+                          "kind": "page",
+                          "children": []
+                        }
+                      ]
                     }
                   ]
                 }

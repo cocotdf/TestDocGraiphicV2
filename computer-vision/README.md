@@ -1,33 +1,55 @@
 # Computer Vision Toolkit
 
-<p align="center">
-  <img src="general-computer-vision/introduction-computer-vision/assets/computervision.svg" alt="Computer Vision Toolkit" width="220" />
-</p>
+<div class="graiphic-home-hero">
+  <p align="center"><img src="../img/computervision.svg" alt="Computer Vision Toolkit icon" width="170" /></p>
+  <p class="graiphic-home-kicker">Image processing, display flows, sessions, and LabVIEW-ready vision tooling.</p>
+  <p class="graiphic-home-lead">
+    The Computer Vision Toolkit gathers image processing functions, manipulation utilities,
+    display helpers, session management, and video writer tools. Use it to build visual
+    pipelines, inspect data, and deploy ONNX-backed vision workflows in LabVIEW.
+  </p>
+  <div class="graiphic-home-pills">
+    <span class="graiphic-home-pill">Image Processing</span>
+    <span class="graiphic-home-pill">Display & UI</span>
+    <span class="graiphic-home-pill">Session Management</span>
+    <span class="graiphic-home-pill">Video Workflows</span>
+  </div>
+</div>
 
-Le toolkit Computer Vision regroupe les fonctions de traitement d'image, les outils de manipulation, la gestion de session et les guides de prise en main pour LabVIEW.
+## Explore The Toolkit
 
-## Explorer la documentation
+<div class="graiphic-home-grid">
+  <a class="graiphic-home-card" href="installation-guide-computer-vision/README.md">
+    <span class="graiphic-home-card-title">Installation Guide</span>
+    <span class="graiphic-home-card-copy">Install the toolkit and prepare the local environment for Computer Vision workflows.</span>
+  </a>
+  <a class="graiphic-home-card" href="general-computer-vision/README.md">
+    <span class="graiphic-home-card-title">General</span>
+    <span class="graiphic-home-card-copy">Read the introduction, beginner guidance, display notes, deployment help, and FAQ.</span>
+  </a>
+  <a class="graiphic-home-card" href="tools/README.md">
+    <span class="graiphic-home-card-title">Tools</span>
+    <span class="graiphic-home-card-copy">Browse windows, files, ROI editing, image manipulation, and pixel-editing utilities.</span>
+  </a>
+  <a class="graiphic-home-card" href="session/README.md">
+    <span class="graiphic-home-card-title">Session</span>
+    <span class="graiphic-home-card-copy">Open, configure, and release video or camera sessions used throughout the toolkit.</span>
+  </a>
+  <a class="graiphic-home-card" href="functions/README.md">
+    <span class="graiphic-home-card-title">Functions</span>
+    <span class="graiphic-home-card-copy">Use the processing and analysis functions grouped by filters, operators, and inspection flows.</span>
+  </a>
+  <a class="graiphic-home-card" href="video-writter/README.md">
+    <span class="graiphic-home-card-title">Video Writter</span>
+    <span class="graiphic-home-card-copy">Create, feed, and release video writer sessions for recording or export pipelines.</span>
+  </a>
+</div>
 
-<table>
-  <tbody>
-    <tr>
-      <td><a href="installation-guide-computer-vision/README.md"><strong>Installation Guide</strong></a><br/>Installer et configurer le toolkit.</td>
-      <td><a href="general-computer-vision/README.md"><strong>General</strong></a><br/>Guides de demarrage, FAQ, display et deploiement.</td>
-      <td><a href="tools/README.md"><strong>Tools</strong></a><br/>Manipulation d&apos;images, ROI, fichiers et affichage.</td>
-    </tr>
-    <tr>
-      <td><a href="session/README.md"><strong>Session</strong></a><br/>Ouverture, configuration et fermeture des sessions.</td>
-      <td><a href="functions/README.md"><strong>Functions</strong></a><br/>Bibliotheque de fonctions de traitement et d&apos;analyse.</td>
-      <td><a href="video-writter/README.md"><strong>Video Writter</strong></a><br/>Lecture, ecriture et gestion de flux video.</td>
-    </tr>
-  </tbody>
-</table>
+## Quick Access
 
-## Sections disponibles
-
-- [Installation guide](installation-guide-computer-vision/README.md)
-- [General](general-computer-vision/README.md)
-- [Tools](tools/README.md)
-- [Session](session/README.md)
-- [Functions](functions/README.md)
-- [Video Writter](video-writter/README.md)
+- [Introduction](general-computer-vision/introduction/README.md)
+- [Beginner's Guide](general-computer-vision/beginners-guide/README.md)
+- [Display](general-computer-vision/cv-display/README.md)
+- [Tools Resume](tools/resume-17/README.md)
+- [Session Resume](session/resume-16/README.md)
+- [Functions Resume](functions/resume-18/README.md)

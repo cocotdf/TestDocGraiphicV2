@@ -1,10 +1,5 @@
 # Graph Function
 
-## Sous-categories
-
-- [File](file-graph-function-dl/README.md)
-- [Graph](graph-deep-learning/README.md)
-
 ## Articles
 
 - [Resume](resume-2/README.md)
@@ -13,4 +8,9 @@
 - [Toolkit Version](toolkit-version/README.md)
 - [Summary](summary/README.md)
 - [Netron Summary](netron-summary/README.md)
+
+## Sous-categories
+
+- [Graph](graph-deep-learning/README.md)
+- [File](file-graph-function-dl/README.md)
 
