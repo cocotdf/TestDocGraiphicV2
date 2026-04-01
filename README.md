@@ -1,130 +1,118 @@
-# Graiphic Toolkits Documentation
-
-Welcome to the official documentation index for **Graiphic Toolkits for LabVIEW**.  
-Below you will find direct access to the GitHub-hosted documentation for **SOTA**, **Accelerator**, **Deep Learning Toolkit**, **Computer Vision Toolkit**, and **CUDA Toolkit**.
-
----
-
-<!-- SOTA -->
-<div style="display: flex; align-items: center; gap: 16px;">
-  <img src="./img/sota-png.png" width="370"/>
-  <h2 style="margin: 0;">SOTA &ndash; State Of The Art</h2>
+<div class="graiphic-home-hero">
+  <p class="graiphic-home-kicker">Unified LabVIEW documentation for AI, vision, acceleration, and deployable systems.</p>
+  <p class="graiphic-home-lead">
+    Explore Graiphic's toolkit documentation from a single GitHub Pages experience covering SOTA, Accelerator,
+    Deep Learning, Computer Vision, and CUDA. Search any guide, VI, or toolkit page directly from the left panel.
+  </p>
+  <div class="graiphic-home-pills">
+    <span class="graiphic-home-pill">Graph Orchestration</span>
+    <span class="graiphic-home-pill">LabVIEW Toolkits</span>
+    <span class="graiphic-home-pill">AI Deployment</span>
+    <span class="graiphic-home-pill">Vision &amp; CUDA</span>
+  </div>
+  <div class="graiphic-home-actions">
+    <a class="graiphic-home-button graiphic-home-button-primary" href="#/README.md?id=toolkits">Browse Documentation</a>
+    <a class="graiphic-home-button graiphic-home-button-secondary" href="https://github.com/cocotdf/TestDocGraiphicV2">Open Repository</a>
+  </div>
+  <p class="graiphic-home-note">Use the search box above the navigation to jump faster through the documentation.</p>
 </div>
 
-**SOTA (State-Of-The-Art)** is the unified framework designed to extend **LabVIEW** with advanced **AI** and **high-performance computing** capabilities.  
-It provides a **graph-oriented execution environment** that links LabVIEW with **ONNX Runtime** and multiple hardware accelerators such as CUDA, TensorRT, DirectML, OpenVINO, and OneDNN.
+## Toolkits
 
-SOTA enables engineers and researchers to:
-- Design and deploy neural networks or complex data pipelines directly inside LabVIEW  
-- Execute models efficiently across CPUs, GPUs, NPUs, FPGAs, or cloud platforms  
-- Integrate AI seamlessly into industrial and test-measurement systems  
+<div class="graiphic-home-grid">
+  <a class="graiphic-home-card" href="./sota/README.md">
+    <div class="graiphic-home-card-media"><img src="./img/sota-png.png" alt="SOTA icon" /></div>
+    <span class="graiphic-home-card-title">SOTA</span>
+    <span class="graiphic-home-card-copy">Visual orchestration and graph execution for deployable AI systems.</span>
+  </a>
+  <a class="graiphic-home-card" href="./accelerator/README.md">
+    <div class="graiphic-home-card-media"><img src="./img/accelerator.png" alt="Accelerator icon" /></div>
+    <span class="graiphic-home-card-title">Accelerator Toolkit</span>
+    <span class="graiphic-home-card-copy">ONNX Runtime acceleration for LabVIEW graphs and hardware-aware execution.</span>
+  </a>
+  <a class="graiphic-home-card" href="./deep-learning/README.md">
+    <div class="graiphic-home-card-media"><img src="./img/deeplearning.svg" alt="Deep Learning icon" /></div>
+    <span class="graiphic-home-card-title">Deep Learning Toolkit</span>
+    <span class="graiphic-home-card-copy">Design, train, and deploy neural architectures directly inside LabVIEW.</span>
+  </a>
+  <a class="graiphic-home-card" href="./computer-vision/README.md">
+    <div class="graiphic-home-card-media"><img src="./img/computervision.svg" alt="Computer Vision icon" /></div>
+    <span class="graiphic-home-card-title">Computer Vision Toolkit</span>
+    <span class="graiphic-home-card-copy">Build imaging pipelines, UI display flows, and vision model deployments.</span>
+  </a>
+  <a class="graiphic-home-card" href="./cuda/README.md">
+    <div class="graiphic-home-card-media"><img src="./img/cuda-module_1.png" alt="CUDA icon" /></div>
+    <span class="graiphic-home-card-title">CUDA Toolkit</span>
+    <span class="graiphic-home-card-copy">Direct GPU execution, memory control, and CUDA-powered operators for LabVIEW.</span>
+  </a>
+</div>
 
-**Documentation:**
-- [Introduction to SOTA](./sota/general-sota/introduction-sota/README.md)
+## Documentation Overview
+
+### SOTA
+
+**SOTA (State-Of-The-Art)** is the visual orchestration framework that links LabVIEW with ONNX Runtime and deployable execution backends.
+
+Documentation:
+- [Introduction](./sota/general-sota/introduction-sota/README.md)
 - [Installation Guide](./sota/installation-guide-sota/sota-installation/README.md)
 - [Licensing](./sota/general-sota/licensing/README.md)
 
----
+### Accelerator Toolkit
 
-<!-- Accelerator -->
-<div style="display: flex; align-items: center; gap: 16px;">
-  <img src="./img/accelerator.png" width="70"/>
-  <h2 style="margin: 0;">Accelerator Toolkit</h2>
-</div>
+The **LabVIEW Accelerator Toolkit** connects LabVIEW applications to ONNX Runtime for hardware-accelerated graph execution.
 
-The **LabVIEW Accelerator Toolkit** is the first ONNX-based computing framework for LabVIEW.  
-It connects LabVIEW applications to the ONNX Runtime for hardware-accelerated data processing.
-
-Main highlights:
-- Built on **ONNX** and **ONNX Runtime**
-- Supports **CPU**, **GPU**, and **DirectML** execution
-- Enables high-performance AI graph deployment directly in LabVIEW
-
-**Documentation:**
+Documentation:
 - [Installation Guide](./accelerator/quick_start-installation_guide/installation-guide/README.md)
+- [Introduction](./accelerator/quick_start-general/introduction/README.md)
 - [Beginner's Guide](./accelerator/quick_start-general/beginners-guide/README.md)
 - [Examples Guide](./accelerator/quick_start-general/examples-guide/README.md)
-- [Troubleshooting](./accelerator/quick_start-general/troubleshooting/README.md)
-- [Deployment](./accelerator/quick_start-general/deployment/README.md)
 - [Hardware Compatibility](./accelerator/quick_start-general/hardware-compatibility/README.md)
+- [Deployment](./accelerator/quick_start-general/deployment/README.md)
+- [Troubleshooting](./accelerator/quick_start-general/troubleshooting/README.md)
 - [FAQ](./accelerator/quick_start-general/faq/README.md)
-- [Introduction](./accelerator/quick_start-general/introduction/README.md)
 
----
+### Deep Learning Toolkit
 
-<!-- Deep Learning -->
-<div style="display: flex; align-items: center; gap: 16px;">
-  <img src="./img/deeplearning.svg" width="70"/>
-  <h2 style="margin: 0;">Deep Learning Toolkit</h2>
-</div>
+The **LabVIEW Deep Learning Toolkit** provides native tools for neural-network creation, training, and inference inside LabVIEW.
 
-The **LabVIEW Deep Learning Toolkit** provides native tools for neural-network creation, training, and inference inside LabVIEW.  
-It is fully compatible with ONNX and shares the same execution backend as Accelerator.
-
-Main features:
-- Native **neural network design and training** inside LabVIEW  
-- **ONNX Runtime** integration for multi-hardware deployment  
-- Unified workflow with **SOTA** and **Accelerator**
-
-**Documentation:**
+Documentation:
 - [Installation Guide](./deep-learning/installation-guide/deep-learning/README.md)
+- [General](./deep-learning/general/README.md)
 - [Architecture Overview](./deep-learning/architecture/README.md)
-- [General Documentation](./deep-learning/general/README.md)
+- [Introduction](./deep-learning/general/introduction/README.md)
 - [Beginner's Guide](./deep-learning/general/beginners-guide/README.md)
 - [Examples Guide](./deep-learning/general/examples-guide/README.md)
-- [Troubleshooting](./deep-learning/general/troubleshooting/README.md)
+- [Hardware Compatibility](./deep-learning/general/hardware-compatibility/README.md)
 - [Deployment](./deep-learning/general/deployment/README.md)
+- [Troubleshooting](./deep-learning/general/troubleshooting/README.md)
 - [FAQ](./deep-learning/general/faq/README.md)
 
----
+### Computer Vision Toolkit
 
-<!-- Computer Vision -->
-<div style="display: flex; align-items: center; gap: 16px;">
-  <img src="./img/computervision.svg" width="70"/>
-  <h2 style="margin: 0;">Computer Vision Toolkit</h2>
-</div>
+The **Computer Vision Toolkit** brings modern vision pipelines and ONNX-backed image processing into LabVIEW.
 
-The **Computer Vision Toolkit** brings modern vision-AI capabilities into LabVIEW using the same unified ONNX Runtime backend as SOTA and Accelerator.  
-It enables real-time processing, image pipelines, and deployment of vision models for industrial and robotics applications.
-
-Main features:
-- Full ONNX vision model support  
-- Real-time image processing pipelines  
-- Integration with SOTA, Accelerator and Deep Learning Toolkit  
-- Easy deployment on CPUs, GPUs, and edge devices  
-
-**Documentation:**
+Documentation:
 - [Installation Guide](./computer-vision/installation-guide-computer-vision/computer-vision-installation/README.md)
+- [General](./computer-vision/general-computer-vision/README.md)
+- [Introduction](./computer-vision/general-computer-vision/introduction/README.md)
 - [Beginner's Guide](./computer-vision/general-computer-vision/beginners-guide/README.md)
-- [Troubleshooting](./computer-vision/general-computer-vision/troubleshooting/README.md)
+- [Display](./computer-vision/general-computer-vision/cv-display/README.md)
 - [Deployment](./computer-vision/general-computer-vision/deployment/README.md)
-- [Display & UI](./computer-vision/general-computer-vision/cv-display/README.md)
+- [Troubleshooting](./computer-vision/general-computer-vision/troubleshooting/README.md)
 - [FAQ](./computer-vision/general-computer-vision/faq/README.md)
 
----
+### CUDA Toolkit
 
-<!-- CUDA Toolkit -->
-<div style="display: flex; align-items: center; gap: 16px;">
-  <img src="./img/cuda-module_1.png" width="70"/>
-  <h2 style="margin: 0;">CUDA Toolkit</h2>
-</div>
+The **CUDA Toolkit for LabVIEW** enables direct GPU acceleration for AI models, numerical computation, and parallel processing.
 
-The **CUDA Toolkit for LabVIEW** enables direct GPU acceleration for AI models, numerical computation, and parallel processing.  
-It integrates seamlessly with SOTA, Accelerator and Deep Learning Toolkit to bring maximum GPU performance to LabVIEW applications.
-
-Main features:
-- Native CUDA execution backend  
-- Automatic GPU memory management  
-- ONNX Runtime CUDA EP integration  
-- Compatible with NVIDIA RTX, Jetson, and data-center GPUs  
-
-**Documentation:**
+Documentation:
 - [Installation Guide](./cuda/installation-guide-cuda/cuda/README.md)
 - [Introduction](./cuda/general-cuda/introduction/README.md)
+- [Beginner's Guide](./cuda/general-cuda/beginners-guide/README.md)
 - [Hardware Compatibility](./cuda/general-cuda/hardware-compatibility/README.md)
+- [Deployment](./cuda/general-cuda/deployment/README.md)
 - [FAQ](./cuda/general-cuda/faq/README.md)
-
----
 
 &copy; 2025 **Graiphic Technologies de France**  
 [https://graiphic.io](https://graiphic.io)

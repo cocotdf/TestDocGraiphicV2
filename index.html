@@ -32,6 +32,8 @@
 
     .sidebar {
       position: relative;
+      display: flex;
+      flex-direction: column;
       border-right: 1px solid var(--sidebar-border-color);
       box-shadow: 0 0 24px rgba(15, 23, 42, 0.03);
     }
@@ -119,18 +121,197 @@
     }
 
     .search {
-      padding-top: 1rem;
-      border-bottom: 1px solid var(--sidebar-border-color);
+      order: 0;
+      padding: 1rem 1rem 0.35rem;
+      border-bottom: 0;
     }
 
     .search input {
+      width: 100%;
+      box-sizing: border-box;
       border-radius: 10px;
       border: 1px solid #cbd5e1;
       padding: 0.75rem 0.9rem;
+      background: #ffffff;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
+    }
+
+    .search .results-panel {
+      margin-top: 0.5rem;
+      border-radius: 12px;
+      border: 1px solid #dbe5ef;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .app-name {
+      order: 1;
+      margin: 0;
+      padding: 0.25rem 1rem 1rem;
+    }
+
+    .app-name a {
+      color: #334155;
+      font-size: 1.18rem;
+      font-weight: 300;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    .app-name a:hover {
+      color: #0f766e;
     }
 
     .sidebar-nav {
+      order: 2;
       padding: 1rem 0 2rem;
+    }
+
+    .graiphic-home-hero {
+      margin: 0 0 2rem;
+      padding: 2rem 2.1rem;
+      border: 1px solid #d8ecf2;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(251, 191, 36, 0.14), transparent 32%),
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.05);
+    }
+
+    .graiphic-home-kicker {
+      margin: 0 0 1rem;
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      font-weight: 650;
+      line-height: 1.06;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+    }
+
+    .graiphic-home-lead {
+      margin: 0 0 1.35rem;
+      max-width: 950px;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    .graiphic-home-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0 0 1.45rem;
+    }
+
+    .markdown-section .graiphic-home-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.62rem 1rem;
+      border-radius: 999px;
+      background: #ecfeff;
+      color: #0f766e;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.08);
+    }
+
+    .graiphic-home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin: 0 0 0.9rem;
+    }
+
+    .markdown-section a.graiphic-home-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid #7dd3c7;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .markdown-section a.graiphic-home-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      text-decoration: none;
+    }
+
+    .markdown-section a.graiphic-home-button-primary {
+      background: #ecfeff;
+      color: #0f766e;
+    }
+
+    .markdown-section a.graiphic-home-button-secondary {
+      background: #ffffff;
+      color: #0f766e;
+    }
+
+    .graiphic-home-note {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+
+    .graiphic-home-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .markdown-section a.graiphic-home-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 1.1rem 1rem;
+      border: 1px solid #dceaf1;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #0f172a;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .markdown-section a.graiphic-home-card:hover {
+      transform: translateY(-2px);
+      border-color: #99f6e4;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+      text-decoration: none;
+    }
+
+    .graiphic-home-card-media {
+      display: flex;
+      align-items: center;
+      min-height: 66px;
+    }
+
+    .graiphic-home-card-media img {
+      max-height: 62px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .graiphic-home-card-title {
+      font-size: 1.06rem;
+      font-weight: 750;
+      color: #0f172a;
+    }
+
+    .graiphic-home-card-copy {
+      color: #475569;
+      line-height: 1.55;
+      font-size: 0.95rem;
     }
 
     .sidebar-resize-handle {
@@ -352,6 +533,20 @@
       .markdown-section {
         max-width: 100%;
         padding: 1.1rem 1rem 2.75rem;
+      }
+
+      .graiphic-home-hero {
+        padding: 1.5rem 1.2rem;
+        border-radius: 24px;
+      }
+
+      .graiphic-home-lead {
+        font-size: 1rem;
+      }
+
+      .markdown-section a.graiphic-home-button {
+        width: 100%;
+        min-width: 0;
       }
 
       .markdown-section h1 {
@@ -709,6 +904,36 @@
       });
     }
 
+    function placeSidebarSearch(attempt) {
+      var sidebar = document.querySelector(".sidebar");
+      if (!sidebar) {
+        return;
+      }
+
+      var search = document.querySelector("div.search");
+      var appName = sidebar.querySelector(".app-name");
+
+      if (!search) {
+        if ((attempt || 0) < 12) {
+          window.setTimeout(function () {
+            placeSidebarSearch((attempt || 0) + 1);
+          }, 120);
+        }
+        return;
+      }
+
+      if (appName) {
+        if (search.previousElementSibling !== null || sidebar.firstElementChild !== search || search.nextElementSibling !== appName) {
+          sidebar.insertBefore(search, appName);
+        }
+        return;
+      }
+
+      if (sidebar.firstElementChild !== search) {
+        sidebar.insertBefore(search, sidebar.firstElementChild);
+      }
+    }
+
     function renderNavigationNodes(nodes, currentFile, depth, parentPath) {
       if (!nodes || !nodes.length) {
         return "";
@@ -999,6 +1224,7 @@
               loadSidebarWidth();
               bindSidebarResize();
               renderSidebarNavigation(vm);
+              placeSidebarSearch(0);
             });
 
             hook.doneEach(function () {
@@ -1029,14 +1255,15 @@
               enhanceRenderedYouTubeLinks(document.querySelector(".cover-main"));
               enhanceParameterImages(document.querySelector(".markdown-section"));
               renderSidebarNavigation(vm);
+              placeSidebarSearch(0);
             });
           }
         ]
       };
 
-      loadScript("https://cdn.jsdelivr.net/npm/docsify@4")
+      loadScript("https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js")
         .then(function () {
-          return loadScript("https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js");
+          return loadScript("https://cdn.jsdelivr.net/npm/docsify@4");
         })
         .catch(function (error) {
           console.error("Failed to load Docsify assets", error);
