@@ -19,6 +19,7 @@
       --heading-color: #0f172a;
       --link-color: #0f766e;
       --code-theme-text: #0f172a;
+      --sidebar-width: 300px;
     }
 
     body {
@@ -30,6 +31,7 @@
     }
 
     .sidebar {
+      position: relative;
       border-right: 1px solid var(--sidebar-border-color);
       box-shadow: 0 0 24px rgba(15, 23, 42, 0.03);
     }
@@ -67,6 +69,33 @@
 
     .sidebar-nav {
       padding: 1rem 0 2rem;
+    }
+
+    .sidebar-resize-handle {
+      position: absolute;
+      top: 0;
+      right: -4px;
+      bottom: 0;
+      width: 8px;
+      cursor: col-resize;
+      z-index: 30;
+      background: transparent;
+    }
+
+    .sidebar-resize-handle::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 3px;
+      width: 2px;
+      background: transparent;
+      transition: background-color 0.15s ease;
+    }
+
+    .sidebar-resize-handle:hover::after,
+    body.is-resizing-sidebar .sidebar-resize-handle::after {
+      background: #99f6e4;
     }
 
     .graiphic-nav {
@@ -173,6 +202,16 @@
       background: var(--theme-color);
       border-color: var(--theme-color);
     }
+
+    @media screen and (min-width: 769px) {
+      .sidebar {
+        width: var(--sidebar-width);
+      }
+
+      .content {
+        left: var(--sidebar-width);
+      }
+    }
   </style>
 </head>
 <body>
@@ -199,6 +238,32 @@
     function currentFileFromRoute(vm) {
       var current = vm.route && (vm.route.file || vm.route.path) ? (vm.route.file || vm.route.path) : "/README.md";
       return normalizeDocPath(current);
+    }
+
+    function applySidebarWidth(width) {
+      var clamped = Math.max(260, Math.min(680, Math.round(width)));
+      document.documentElement.style.setProperty("--sidebar-width", clamped + "px");
+      return clamped;
+    }
+
+    function loadSidebarWidth() {
+      try {
+        var stored = window.localStorage.getItem("graiphic-sidebar-width");
+        if (!stored) {
+          return applySidebarWidth(300);
+        }
+        return applySidebarWidth(parseInt(stored, 10));
+      } catch (error) {
+        return applySidebarWidth(300);
+      }
+    }
+
+    function saveSidebarWidth(width) {
+      try {
+        window.localStorage.setItem("graiphic-sidebar-width", String(width));
+      } catch (error) {
+        return;
+      }
     }
 
     function docsifyRouteForPath(path) {
@@ -359,6 +424,69 @@
       navRoot.__graiphicBound = true;
     }
 
+    function bindSidebarResize() {
+      var sidebar = document.querySelector(".sidebar");
+      if (!sidebar || sidebar.__graiphicResizeBound) {
+        return;
+      }
+
+      var handle = document.createElement("div");
+      handle.className = "sidebar-resize-handle";
+      handle.setAttribute("role", "separator");
+      handle.setAttribute("aria-orientation", "vertical");
+      handle.setAttribute("aria-label", "Resize sidebar");
+      sidebar.appendChild(handle);
+
+      var isDesktop = function () {
+        return window.matchMedia("(min-width: 769px)").matches;
+      };
+
+      var activePointerId = null;
+
+      var stopResize = function () {
+        activePointerId = null;
+        document.body.classList.remove("is-resizing-sidebar");
+      };
+
+      handle.addEventListener("pointerdown", function (event) {
+        if (!isDesktop() || event.button !== 0) {
+          return;
+        }
+
+        activePointerId = event.pointerId;
+        document.body.classList.add("is-resizing-sidebar");
+        handle.setPointerCapture(event.pointerId);
+        event.preventDefault();
+      });
+
+      handle.addEventListener("pointermove", function (event) {
+        if (activePointerId !== event.pointerId || !isDesktop()) {
+          return;
+        }
+
+        var width = applySidebarWidth(event.clientX);
+        saveSidebarWidth(width);
+      });
+
+      handle.addEventListener("pointerup", function (event) {
+        if (activePointerId !== event.pointerId) {
+          return;
+        }
+        stopResize();
+      });
+
+      handle.addEventListener("pointercancel", stopResize);
+      window.addEventListener("resize", function () {
+        if (!isDesktop()) {
+          document.documentElement.style.removeProperty("--sidebar-width");
+          return;
+        }
+        loadSidebarWidth();
+      });
+
+      sidebar.__graiphicResizeBound = true;
+    }
+
     function renderSidebarNavigation(vm) {
       var navData = window.__GRAIPHIC_NAV__;
       if (!navData || !Array.isArray(navData.sections)) {
@@ -447,6 +575,8 @@
             });
 
             hook.mounted(function () {
+              loadSidebarWidth();
+              bindSidebarResize();
               renderSidebarNavigation(vm);
             });
 
