@@ -6,7 +6,7 @@
 
 |  | **ICONS** | **RESUME** |
 | --- | --- | --- |
-| [Create](../../../_resolved/create/README.md) | ![Create.Png](assets/create.png) | Creates a temporary memory location for an image. |
+| [Create](../image-manipulation/create-3/README.md) | ![Create.Png](assets/create.png) | Creates a temporary memory location for an image. |
 | [Cast Image](../image-manipulation/cast-image/README.md) | ![Cast_Image 1.Png](assets/cast_image-1.png) | Converts the current image type to the image type specified by “Target Type”. |
 | [Copy](../image-manipulation/copy/README.md) | ![Copy.Png](assets/copy.png) | Create a copy of Image Src into Image Dst. |
 | [Set Image Size](../image-manipulation/set-image-size/README.md) | ![Set_Image_Size.Png](assets/set_image_size.png) | Modifies the resolution of an image. |
@@ -17,7 +17,7 @@
 | [Tiles](../image-manipulation/tiles/README.md) | ![Tiles.Png](assets/tiles.png) | Slices an image into specified dimensions and optionally resizes tiles to the original image size. |
 | [Release](../image-manipulation/release/README.md) | ![Release.Png](assets/release.png) | Close image reference. |
 | [Resample](../image-modification/resample/README.md) | ![Resample.Png](assets/resample.png) | Resamples an image to a user-defined size. |
-| [Expand](../../../_resolved/expand/README.md) | ![Expand.Png](assets/expand.png) | Expands (duplicates) an image or part of an image by adjusting the horizontal and vertical resolution. |
+| [Expand](../image-modification/expand-2/README.md) | ![Expand.Png](assets/expand.png) | Expands (duplicates) an image or part of an image by adjusting the horizontal and vertical resolution. |
 | [Extract](../image-modification/extract/README.md) | ![Extract 1.Png](assets/extract-1.png) | Extracts (reduces) an image or part of an image with adjustment of the horizontal and vertical resolution. |
 | [Insert Image](../image-modification/insert-image/README.md) | ![Insert_Image.Png](assets/insert_image.png) | Inserts an image in the Image Src. |
 | [Rotate](../image-modification/rotate/README.md) | ![Rotate.Png](assets/rotate.png) | Rotates an image. |

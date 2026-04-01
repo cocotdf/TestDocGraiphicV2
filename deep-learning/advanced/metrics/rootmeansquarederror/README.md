@@ -36,7 +36,7 @@
 
 <p>The Root Mean Squared Error (RMSE) metric is commonly used in machine learning, particularly in regression tasks. It is useful for quantifying the error between values predicted by a model and actual values.</p>
 
-<p>The RMSE is the square root of the mean of the squared errors. The smaller the RMSE, the better, as this means that the prediction error is smaller. One of the main reasons for using RMSE rather than Mean Squared Error (<a href="https://haibal.com/documentation/mean-squared-error/">MSE</a>) is that RMSE is expressed in the same unit as the quantity you are trying to predict, making it more interpretable.</p>
+<p>The RMSE is the square root of the mean of the squared errors. The smaller the RMSE, the better, as this means that the prediction error is smaller. One of the main reasons for using RMSE rather than Mean Squared Error (<a href="../meansquarederror-2/README.md">MSE</a>) is that RMSE is expressed in the same unit as the quantity you are trying to predict, making it more interpretable.</p>
 
 <p>Here are a few specific areas where RMSE is used :</p>
 

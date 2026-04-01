@@ -58,7 +58,7 @@
 
 <h2>Calculation</h2>
 
-<p>Use this crossentropy metric when there are two or more label classes. We expect labels to be provided as integers. If you want to provide labels using one-hot representation, please use <a href="https://haibal.com/documentation/categorical-crossentropy/">CategoricalCrossentropy</a> metric.</p>
+<p>Use this crossentropy metric when there are two or more label classes. We expect labels to be provided as integers. If you want to provide labels using one-hot representation, please use <a href="../categoricalcrossentropy-2/README.md">CategoricalCrossentropy</a> metric.</p>
 
 <p align="center"><img alt="sparse_categorical_cross_calcul" src="assets/sparse_categorical_cross_calcul.png" width="220"/></p>
 

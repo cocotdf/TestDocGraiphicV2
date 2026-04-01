@@ -67,7 +67,7 @@
   <tbody>
     <tr>
       <td width="64" valign="top"><img alt="Enum.Png" src="assets/enum.png" width="42"/></td>
-      <td valign="top"><strong><a href="https://haibal.com/documentation/coordinate-transformation-mode/">coordinate_transformation_mode</a> : <em>enum,</em></strong> allowed values are ‘half_pixel’ and ‘output_half_pixel’. Use the value ‘half_pixel’ to pixel shift the input coordinates by -0.5 (the recommended behavior). Use the value ‘output_half_pixel’ to omit the pixel shift for the input (use this for a backward-compatible behavior).</td>
+      <td valign="top"><strong><a href="../../../../../../more-deep-learning/nodes-parameters/coordinate_transformation_mode/README.md">coordinate_transformation_mode</a> : <em>enum,</em></strong> allowed values are ‘half_pixel’ and ‘output_half_pixel’. Use the value ‘half_pixel’ to pixel shift the input coordinates by -0.5 (the recommended behavior). Use the value ‘output_half_pixel’ to omit the pixel shift for the input (use this for a backward-compatible behavior).</td>
     </tr>
     <tr>
       <td width="64" valign="top"></td>

@@ -16,5 +16,5 @@
 |  | **ICONS** | **RESUME** |
 | --- | --- | --- |
 | [L1](../l1/README.md) | ![l1.png](assets/l1.png) | Define L1 regularizer. |
-| [L1L2](https://haibal.com/documentation/l1-l2/) | ![l1l2.png](assets/l1l2.png) | Define L1L2 regularizer. |
+| [L1L2](../l1l2/README.md) | ![l1l2.png](assets/l1l2.png) | Define L1L2 regularizer. |
 | [L2](../l2/README.md) | ![l2.png](assets/l2.png) | Define L2 regularizer. |

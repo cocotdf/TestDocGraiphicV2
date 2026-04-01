@@ -37,7 +37,7 @@
 | [LayerNormalization](../index/get-layer-norm-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the LayerNormalization layer selected by the index. |
 | [PReLU 2D](../index/get-prelu-2d-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the PReLU2D selected by the index. |
 | [PReLU 3D](../index/get-prelu-3d-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the PReLU3D selected by the index. |
-| [PReLU 4D](../index/get-prelu-4d-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the PReLU4D selected by the index. |
+| [PReLU 4D](../name/get-prelu-4d-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the PReLU4D selected by the index. |
 | [PReLU 5D](../index/get-prelu-5d-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the PReLU5D selected by the index. |
 | [Bidirectional](../index/get-bidirectional-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the Bidirectional layer selected by the index. |
 | [GRU](../index/get-gru-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the GRU selected by the index. |
@@ -75,6 +75,6 @@
 | [GRU](../name/get-gru-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the GRU selected by the name. |
 | [LSTM](../name/get-lstm-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the LSTM layer selected by the name. |
 | [RNN (GRU)](../name/get-rnn-gru-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the RNN selected by the name. |
-| [RNN (LSTM)](../name/get-rnn-lstm-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the RNN selected by the name. |
+| [RNN (LSTM)](../index/get-rnn-lstm-weights-by-index/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the RNN selected by the name. |
 | [RNN (SimpleRNN)](../name/get-rnn-simple-rnn-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the RNN selected by the name. |
 | [SimpleRNN](../name/get-simple-rnn-weights-by-name/README.md) | ![Image Missing.Svg](../../../../_assets/image-missing.svg) | Gets the weights of the SimpleRNN selected by the name. |

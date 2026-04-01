@@ -25,25 +25,25 @@
 | [Quantify](../inspection/quantify/README.md) | ![Quantify.Png](assets/quantify.png) | Quantifies the contents of an image or the regions within an image. |
 | [ROI Profile](../inspection/roi-profile/README.md) | ![Roi_Profile.Png](assets/roi_profile.png) | Calculates the profile of the pixels along the boundary of an ROI descriptor. |
 | [Detect Faces](../inspection/detect-faces/README.md) | ![Detect_Faces.Png](assets/detect_faces.png) | Apply a haarscascades to detect faces then add rectangle around theses faces. |
-| [Add](../../../_resolved/add/README.md) | ![Add.Png](assets/add.png) | Adds two images or an image and a constant. |
-| [And](../../../_resolved/and/README.md) | ![And.Png](assets/and.png) | Performs an AND or NAND operation on two images or an image and a constant. |
+| [Add](../operators/add-2/README.md) | ![Add.Png](assets/add.png) | Adds two images or an image and a constant. |
+| [And](../operators/and-2/README.md) | ![And.Png](assets/and.png) | Performs an AND or NAND operation on two images or an image and a constant. |
 | [Compare](../operators/compare/README.md) | ![Compare.Png](assets/compare.png) | Performs comparison operations between two images or an image and a constant. |
-| [Divide](../../../_resolved/divide/README.md) | ![Divide.Png](assets/divide.png) | Divides one image by another image or an image by a constant. |
+| [Divide](../operators/divide/README.md) | ![Divide.Png](assets/divide.png) | Divides one image by another image or an image by a constant. |
 | [LogDiff](../operators/logdiff/README.md) | ![Log_Diff.Png](assets/log_diff.png) | Keeps bits found in Image Src A that are absent from Image Src B. |
 | [Mask](../operators/mask/README.md) | ![Mask 1.Png](assets/mask-1.png) | Recopies the Image Src into the Image Dst. |
-| [Multiply](../../../_resolved/multiply/README.md) | ![Multiply.Png](assets/multiply.png) | Multiplies two images or an image and a constant. |
-| [Or](../../../_resolved/or/README.md) | [![Or.Png](assets/or.png)](../operators/weighted-sum/README.md) | Performs an OR or NOR operation on two images or an image and a constant. |
+| [Multiply](../operators/multiply/README.md) | ![Multiply.Png](assets/multiply.png) | Multiplies two images or an image and a constant. |
+| [Or](../operators/or-2/README.md) | [![Or.Png](assets/or.png)](../operators/weighted-sum/README.md) | Performs an OR or NOR operation on two images or an image and a constant. |
 | [Segmentation Mask](../operators/segmentation-mask/README.md) | ![Segmentation_Mask.Png](assets/segmentation_mask.png) | The Segmentation Mask function merges a base image with a color mask using a given opacity factor, producing a partially masked image. |
 | [Segmentation Masks](../operators/segmentation-masks/README.md) | ![Segmentation_Masks.Png](assets/segmentation_masks.png) | The Segmentation Mask function merges a base image with multiple color masks using a given opacity factor for every mask, producing a partially masked image. |
-| [Split](../../../_resolved/split/README.md) | ![Split_Image.Png](assets/split_image.png) | The Split Image function merges two images by dividing horizontally according to a coefficient, creating a new image. |
+| [Split](../operators/split-2/README.md) | ![Split_Image.Png](assets/split_image.png) | The Split Image function merges two images by dividing horizontally according to a coefficient, creating a new image. |
 | [Subtract](../operators/subtract/README.md) | ![Subtract.Png](assets/subtract.png) | Subtracts one image from another or a constant from an image. |
 | [Weighted Sum](../operators/weighted-sum/README.md) | ![Weighted_Sum.Png](assets/weighted_sum.png) | The Weighted Sum function merges a base image with an other one (generally a mask) using a given coefficient. |
-| [Match Template](../operators/weighted-sum/README.md) | ![Mask 1.Png](assets/mask-1.png) | Search Image Template in Image Src and add bounding box to Image Dst where it is located. |
+| [Match Template](../pattern/match-template/README.md) | ![Mask 1.Png](assets/mask-1.png) | Search Image Template in Image Src and add bounding box to Image Dst where it is located. |
 | [Auto Adjust Contrast](../treatment/auto-adjust-contrast/README.md) | ![Auto_Adjust_Contrast.Png](assets/auto_adjust_contrast.png) | Boosts contrast based on the image’s histogram to improve normalization and line detection in varying lighting conditions. |
 | [BCG Lookup](../treatment/bcg-lookup/README.md) | ![Bcg_Lookup.Png](assets/bcg_lookup.png) | Applies a brightness, contrast, and gamma correction to an image. |
 | [Exposure](../treatment/exposure/README.md) | ![Exposure.Png](assets/exposure.png) | Converts Src pixel values to the Dst image according to this formula ((a(*Src)(x,y)+ß)).​ |
 | [Hue](../treatment/hue/README.md) | ![Hue.Png](assets/hue.png) | Adjust the hue in the image. |
-| [Inverse](../../../_resolved/inverse/README.md) | ![Inverse.Png](assets/inverse.png) | Inverts the pixel intensities of an image to compute the negative of an image. |
+| [Inverse](../treatment/inverse-2/README.md) | ![Inverse.Png](assets/inverse.png) | Inverts the pixel intensities of an image to compute the negative of an image. |
 | [Local Threshold](../treatment/local-threshold/README.md) | ![Local_Threshold.Png](assets/local_threshold.png) | Thresholds an image into a binary image based on the specified local adaptive thresholding method. |
 | [Magic Wand](../treatment/magic-wand/README.md) | ![Magic_Wand.Png](assets/magic_wand.png) | Creates an image mask by extracting a region surrounding a reference pixel, called the origin, and using a tolerance of intensity variations based on this reference pixel. |
 | [Multi Threshold](../treatment/multi-threshold/README.md) | ![Multi_Threshold.Png](assets/multi_threshold.png) | Performs thresholds of multiple intensity ranges to an image. |

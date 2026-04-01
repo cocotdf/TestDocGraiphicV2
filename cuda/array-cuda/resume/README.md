@@ -24,7 +24,7 @@
 | [Array Subset](../array-subset/README.md) | ![Array_Subset.Png](assets/array_subset.png) | Returns a portion of array starting at index and containing length elements. |
 | [Min & Max](../min-max/README.md) | ![Min_And_Max.Png](assets/min_and_max.png) | Returns the maximum and minimum values found in array, along with the indexes for each value. |
 | [Reshape Array](../reshape-array/README.md) | ![Reshape_Array.Png](assets/reshape_array.png) | Changes the dimensions of an array according to the values of dimension size 0..m-1. |
-| [Sort Array](../../../_unmigrated/perrine-graiphic-io/sort-array/README.md) | ![Sort_Array.Png](assets/sort_array.png) | Rearranges array by sorting the elements in ascending order. |
+| [Sort Array](../short-array/README.md) | ![Sort_Array.Png](assets/sort_array.png) | Rearranges array by sorting the elements in ascending order. |
 | [Shuffle Array](../shuffle-array/README.md) | ![Shuffle_Array.Png](assets/shuffle_array.png) | Rearranges the elements of an array in a pseudorandom order. |
 | [Reverse 1D Array](../reverse-1d-array/README.md) | ![Reverse_1D_Array.Png](assets/reverse_1d_array.png) | Reverses the order of the elements in array, where array is of any type. |
 | [Search In Array](../search-in-array/README.md) | ![Search_In_Array 1.Png](assets/search_in_array-1.png) | Searches for an element in an array starting at start index. |

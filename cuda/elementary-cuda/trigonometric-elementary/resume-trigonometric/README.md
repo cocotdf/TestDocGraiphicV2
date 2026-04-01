@@ -26,6 +26,6 @@
 | [Inverse Secant](../inverse-secant/README.md) | ![Inverse_Secant.Png](assets/inverse_secant.png) | Computes the inverse secant of x. |
 | [Inverse Cosecant](../inverse-cosecant/README.md) | ![Inverse_Cosecant.Png](assets/inverse_cosecant.png) | Computes the inverse cosecant of x. |
 | [Inverse Cotangent](../inverse-cotangent/README.md) | ![Inverse_Cotangent.Png](assets/inverse_cotangent.png) | Computes the inverse cotangent of x. |
-| [Sine & Cosine](../../../../_unmigrated/perrine-graiphic-io/sine-and-cosine/README.md) | ![Sine_And_Cosine.Png](assets/sine_and_cosine.png) | Computes both the sine and cosine of x, where x is in radians. |
+| [Sine & Cosine](../sine-cosine/README.md) | ![Sine_And_Cosine.Png](assets/sine_and_cosine.png) | Computes both the sine and cosine of x, where x is in radians. |
 | [Sinc](../sinc/README.md) | ![Sinc.Png](assets/sinc.png) | Computes the sine of x divided by x, where x is in radians. |
-| [Inverse Tangent (2 Input)](../../../../_unmigrated/perrine-graiphic-io/inverse-tangent-2-input/README.md) | ![Inverse_Tangent_2_Input.Png](assets/inverse_tangent_2_input.png) | Computes the arctangent of y/x. |
+| [Inverse Tangent (2 Input)](../inverse-tangent-2/README.md) | ![Inverse_Tangent_2_Input.Png](assets/inverse_tangent_2_input.png) | Computes the arctangent of y/x. |

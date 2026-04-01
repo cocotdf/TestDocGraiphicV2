@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>MaxPoolWithMask works like a standard <a href="https://haibal.com/documentation/node-max-pool/">MaxPool</a>, but additionally returns a mask indicating where each maximum value was found within the pooling region.</p>
+<p>MaxPoolWithMask works like a standard <a href="../../../mono_input/multi-output-nodes-dl/maxpool/README.md">MaxPool</a>, but additionally returns a mask indicating where each maximum value was found within the pooling region.</p>
 
 <p align="center"><img alt="node_max_pool_with_mask.png" src="assets/node_max_pool_with_mask.png" width="299"/></p>
 

@@ -17,7 +17,7 @@
 | [Substract](../substract-2/README.md) | ![Substract.Png](assets/substract.png) | Computes the difference of the inputs. |
 | [Multiply](../multiply/README.md) | ![Multiply.Png](assets/multiply.png) | Returns the product of the inputs. |
 | [Divide](../divide/README.md) | ![Divide.Png](assets/divide.png) | Computes the quotient of the inputs. |
-| [Quotient & Remainder](../../../_unmigrated/perrine-graiphic-io/quotient-and-remainder/README.md) | ![Quotient_And_Remainder.Png](assets/quotient_and_remainder.png) | Computes the integer quotient and the remainder of the inputs. |
+| [Quotient & Remainder](../quotient-remainder/README.md) | ![Quotient_And_Remainder.Png](assets/quotient_and_remainder.png) | Computes the integer quotient and the remainder of the inputs. |
 | [Increment](../increment-2/README.md) | ![Increment.Png](assets/increment.png) | Adds 1 to the input value. |
 | [Decrement](../decrement-2/README.md) | ![Decrement.Png](assets/decrement.png) | Subtracts 1 from the input value. |
 | [Add Array Element](../add-array-element/README.md) | ![Add_Array_Element.Png](assets/add_array_element.png) | Returns the sum of all the elements in input array. |
@@ -26,7 +26,7 @@
 | [Round To Nearest](../round-to-nearest/README.md) | ![Round_To_Nearest.Png](assets/round_to_nearest.png) | Rounds the input to the nearest integer. |
 | [Round Toward -Infinity](../round-toward-less-infinity/README.md) | ![Round_Toward_Less_Inf.Png](assets/round_toward_less_inf.png) | Truncates the input to the next lowest integer. |
 | [Round Toward +Infinity](../../../_unmigrated/perrine-graiphic-io/round-toward-more-infinity/README.md) | ![Round_Toward_More_Inf.Png](assets/round_toward_more_inf.png) | Rounds the input to the next highest integer. |
-| [Scale By Power Of Two](../../../_unmigrated/perrine-graiphic-io/scale-by-power-of-two/README.md) | ![Scale_By_Power_Of_Two.Png](assets/scale_by_power_of_two.png) | Multiplies x by 2 raised to the power of n. |
+| [Scale By Power Of Two](../scale-power-of-two/README.md) | ![Scale_By_Power_Of_Two.Png](assets/scale_by_power_of_two.png) | Multiplies x by 2 raised to the power of n. |
 | [Square Root](../square-root/README.md) | ![Square_Root.Png](assets/square_root.png) | Computes the square root of the input value. |
 | [Square](../square-2/README.md) | ![Square.Png](assets/square.png) | Computes the square of the input value. |
 | [Negate](../negate-2/README.md) | ![Negate.Png](assets/negate.png) | Negates the input value. |

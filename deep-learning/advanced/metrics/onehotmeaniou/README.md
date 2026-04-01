@@ -69,7 +69,7 @@
 
 <p>So, depending on the value of sparse_y_pred, MeanOneHotIoU can accommodate both one-hot encoded predictions and sparse integer predictions.</p>
 
-<p>Note, if there is only one channel in the labels and predictions, this class is the same as class MeanIoU. In this case, use <a href="https://haibal.com/documentation/mean-iou/">MeanIoU</a> instead.</p>
+<p>Note, if there is only one channel in the labels and predictions, this class is the same as class MeanIoU. In this case, use <a href="../meaniou/README.md">MeanIoU</a> instead.</p>
 
 <table>
   <tbody>

@@ -49,7 +49,7 @@
 </li>
 </ul>
 
-<p>The advantage of MSE is that it strongly penalizes large errors thanks to squaring, which can be desirable when large errors are to be avoided. However, one disadvantage is that MSE is in squared units, which can make it more difficult to interpret than other error measures such as mean absolute error (<a href="https://haibal.com/documentation/mean-absolute-error/">MAE</a>). In addition, as MSE gives greater weight to large errors, it can be very sensitive to outliers.</p>
+<p>The advantage of MSE is that it strongly penalizes large errors thanks to squaring, which can be desirable when large errors are to be avoided. However, one disadvantage is that MSE is in squared units, which can make it more difficult to interpret than other error measures such as mean absolute error (<a href="../meanabsoluteerror-2/README.md">MAE</a>). In addition, as MSE gives greater weight to large errors, it can be very sensitive to outliers.</p>
 
 <h2>Calculation</h2>
 

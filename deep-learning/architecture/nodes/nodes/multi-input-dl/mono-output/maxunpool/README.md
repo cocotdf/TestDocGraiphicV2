@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>MaxUnpool essentially computes the partial inverse of the <a href="https://haibal.com/documentation/node-max-pool/">MaxPool</a> op.</p>
+<p>MaxUnpool essentially computes the partial inverse of the <a href="../../../mono_input/multi-output-nodes-dl/maxpool/README.md">MaxPool</a> op.</p>
 
 <p align="center"><img alt="node_max_un_pool.png" src="assets/node_max_un_pool.png" width="299"/></p>
 

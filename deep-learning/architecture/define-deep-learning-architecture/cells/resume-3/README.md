@@ -17,6 +17,6 @@
 
 |  | **ICONS** | **RESUME** |
 | --- | --- | --- |
-| [GRU](https://haibal.com/documentation/gru-cell-define/) | ![Gru_Cell_Define.Png](assets/gru_cell_define.png) | Define the cell gru layer according to its parameters. |
-| [LSTM](https://haibal.com/documentation/lstm-cell-define/) | ![Lstm_Cell_Define.Png](assets/lstm_cell_define.png) | Define the cell lstm layer according to its parameters. |
-| [SimpleRNN](https://haibal.com/documentation/simple-rnn-cell-define/) | ![Simple_Rnn_Cell_Define.Png](assets/simple_rnn_cell_define.png) | Define the cell simple rnn layer according to its parameters. |
+| [GRU](../gru-3/README.md) | ![Gru_Cell_Define.Png](assets/gru_cell_define.png) | Define the cell gru layer according to its parameters. |
+| [LSTM](../lstm-3/README.md) | ![Lstm_Cell_Define.Png](assets/lstm_cell_define.png) | Define the cell lstm layer according to its parameters. |
+| [SimpleRNN](../simplernn-3/README.md) | ![Simple_Rnn_Cell_Define.Png](assets/simple_rnn_cell_define.png) | Define the cell simple rnn layer according to its parameters. |

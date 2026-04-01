@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>NhwcMaxPool is a version of <a href="https://haibal.com/documentation/node-max-pool/">MaxPool</a> optimized for tensors where the channels are in the last dimension (NHWC) instead of the second (NCHW).</p>
+<p>NhwcMaxPool is a version of <a href="../../multi-output-nodes-dl/maxpool/README.md">MaxPool</a> optimized for tensors where the channels are in the last dimension (NHWC) instead of the second (NCHW).</p>
 
 <p align="center"><img alt="node_nhwc_max_pool.png" src="assets/node_nhwc_max_pool.png" width="299"/></p>
 

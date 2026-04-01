@@ -39,7 +39,7 @@
   <tbody>
     <tr>
       <td width="64" valign="top"><img alt="Enum.Png" src="assets/enum.png" width="42"/></td>
-      <td valign="top"><strong><a href="https://haibal.com/documentation/training-type/">type</a> : <em>enum, </em></strong>defines how the initializer behaves when the graph is used in training mode. It determines whether the tensor is treated as a constant, as trainable weights, or as frozen weights. During inference, it makes no difference whether the type is <code>Constant</code>, <code>Train Weights</code>, or <code>Frozen Weights</code>.</td>
+      <td valign="top"><strong><a href="../../../../../more-deep-learning/nodes-parameters/training_type/README.md">type</a> : <em>enum, </em></strong>defines how the initializer behaves when the graph is used in training mode. It determines whether the tensor is treated as a constant, as trainable weights, or as frozen weights. During inference, it makes no difference whether the type is <code>Constant</code>, <code>Train Weights</code>, or <code>Frozen Weights</code>.</td>
     </tr>
     <tr>
       <td width="64" valign="top"><img alt="Cluster.Png" src="assets/cluster.png" width="42"/></td>

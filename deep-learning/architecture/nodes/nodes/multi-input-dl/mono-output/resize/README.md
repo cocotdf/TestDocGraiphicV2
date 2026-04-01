@@ -87,7 +87,7 @@
     </tr>
     <tr>
       <td width="64" valign="top"><img alt="Enum.Png" src="assets/enum.png" width="42"/></td>
-      <td valign="top"><strong><a href="https://haibal.com/documentation/coordinate-transformation-mode/">coordinate_transformation_mode</a> : <em>enum,</em></strong> this attribute describes how to transform the coordinate in the resized tensor to the coordinate in the original tensor.</td>
+      <td valign="top"><strong><a href="../../../../../../more-deep-learning/nodes-parameters/coordinate_transformation_mode/README.md">coordinate_transformation_mode</a> : <em>enum,</em></strong> this attribute describes how to transform the coordinate in the resized tensor to the coordinate in the original tensor.</td>
     </tr>
     <tr>
       <td width="64" valign="top"></td>
@@ -119,7 +119,7 @@
     </tr>
     <tr>
       <td width="64" valign="top"><img alt="Enum.Png" src="assets/enum.png" width="42"/></td>
-      <td valign="top"><strong><a href="https://haibal.com/documentation/keep-aspect-ratio-policy/">keep_aspect_ratio_policy</a> : <em>enum,</em></strong> this attribute describes how to interpret the <code>sizes</code> input with regard to keeping the original aspect ratio of the input, and it is not applicable when the <code>scales</code> input is used.</td>
+      <td valign="top"><strong><a href="../../../../../../more-deep-learning/nodes-parameters/keep_aspect_ratio_policy/README.md">keep_aspect_ratio_policy</a> : <em>enum,</em></strong> this attribute describes how to interpret the <code>sizes</code> input with regard to keeping the original aspect ratio of the input, and it is not applicable when the <code>scales</code> input is used.</td>
     </tr>
     <tr>
       <td width="64" valign="top"></td>

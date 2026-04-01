@@ -38,7 +38,7 @@
 
 <h2>Use cases</h2>
 
-<p>Mean Relative Error (MRE) is an error measure often used in machine learning for regression problems. MRE measures the mean relative error, i.e. how much the model’s predictions differ in percentage from the ground truth. It is similar to Mean Absolute Percentage Error (<a href="https://haibal.com/documentation/mean-absolute-percentage-error/">MAPE</a>), but does not take the absolute value of the errors before averaging them, which means it can be positive or negative depending on whether the predictions are on average below or above the ground truth.</p>
+<p>Mean Relative Error (MRE) is an error measure often used in machine learning for regression problems. MRE measures the mean relative error, i.e. how much the model’s predictions differ in percentage from the ground truth. It is similar to Mean Absolute Percentage Error (<a href="../meanabsolutepercentageerror-2/README.md">MAPE</a>), but does not take the absolute value of the errors before averaging them, which means it can be positive or negative depending on whether the predictions are on average below or above the ground truth.</p>
 
 <p>Here are some specific areas where MRE is commonly used :</p>
 

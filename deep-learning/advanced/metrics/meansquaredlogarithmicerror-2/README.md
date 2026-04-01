@@ -34,7 +34,7 @@
 
 <h2>Use cases</h2>
 
-<p>The Mean Squared Logarithmic Error (MSLE) metric is often used in machine learning, specifically in regression problems. It is particularly useful when you want to focus on relative rather than absolute errors, and when you want to penalize large errors less than Mean Squared Error (<a href="https://haibal.com/documentation/mean-squared-error/">MSE</a>).</p>
+<p>The Mean Squared Logarithmic Error (MSLE) metric is often used in machine learning, specifically in regression problems. It is particularly useful when you want to focus on relative rather than absolute errors, and when you want to penalize large errors less than Mean Squared Error (<a href="../meansquarederror-2/README.md">MSE</a>).</p>
 
 <p>Here are a few specific areas where MSLE is commonly used :</p>
 
@@ -48,7 +48,7 @@
 </li>
 </ul>
 
-<p>The advantage of MSLE is that it focuses on relative rather than absolute errors, which can be useful when the magnitude of the variable you are trying to predict varies greatly. It is also less sensitive to large errors than <a href="https://haibal.com/documentation/mean-squared-error/">MSE</a>, which can be useful when you want to avoid giving too much importance to outliers.</p>
+<p>The advantage of MSLE is that it focuses on relative rather than absolute errors, which can be useful when the magnitude of the variable you are trying to predict varies greatly. It is also less sensitive to large errors than <a href="../meansquarederror-2/README.md">MSE</a>, which can be useful when you want to avoid giving too much importance to outliers.</p>
 
 <h2>Calculation</h2>
 

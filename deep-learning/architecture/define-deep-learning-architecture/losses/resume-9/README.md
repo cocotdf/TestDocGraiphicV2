@@ -15,18 +15,18 @@
 
 |  | **ICONS** | **RESUME** |
 | --- | --- | --- |
-| [BinaryCrossentropy](https://haibal.com/documentation/loss-binary-crossentropy/) | ![custom_loss.png](assets/custom_loss.png) | Computes the cross-entropy loss between true labels and predicted labels. |
-| [CategoricalCrossentropy](https://haibal.com/documentation/loss-categorical-crossentropy/) | ![loss.png](assets/loss.png) | Computes the crossentropy loss between the labels and predictions.​ |
-| [CategoricalHinge](https://haibal.com/documentation/loss-categorical-hinge/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the categorical hinge loss between y_true and y_pred.​ |
-| [CosineSimilarity](https://haibal.com/documentation/loss-cosine-similarity/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the cosine similarity between true labels and predicted labels.​ |
-| [Hinge](https://haibal.com/documentation/loss-hinge/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the hinge loss between y_true and y_pred.​ |
-| [Huber](https://haibal.com/documentation/loss-huber/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the Huber loss between y_true and y_pred.​ |
-| [KLDivergence](https://haibal.com/documentation/loss-kl-divergence/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes Kullback-Leibler divergence loss between y_true and y_pred.​ |
-| [LogCosh](https://haibal.com/documentation/loss-log-cosh/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the logarithm of the hyperbolic cosine of the prediction error. |
-| [MeanAbsoluteError](https://haibal.com/documentation/loss-mean-absolute-error/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean of absolute difference between labels and predictions.​ |
-| [MeanAbsolutePercentageError](https://haibal.com/documentation/loss-mean-absolute-percentage-error/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean absolute percentage error between y_true and y_pred.​ |
-| [MeanSquaredError](https://haibal.com/documentation/loss-mean-squared-error/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean of squares of errors between labels and predictions. |
-| [MeanSquaredLogarithmicError](https://haibal.com/documentation/loss-mean-squared-logarithmic-error/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean squared logarithmic error between y_true and y_pred. |
-| [Poisson](https://haibal.com/documentation/loss-poisson/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the Poisson loss between y_true and y_pred.​ |
-| [SquaredHinge](https://haibal.com/documentation/loss-squared-hinge/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the squared hinge loss between y_true and y_pred.​ |
-| [Custom](https://haibal.com/documentation/loss-custom/) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | A custom loss function allows you to define your own loss logic, making it possible to go beyond the standard loss functions provided by libraries. |
+| [BinaryCrossentropy](../binarycrossentropy/README.md) | ![custom_loss.png](assets/custom_loss.png) | Computes the cross-entropy loss between true labels and predicted labels. |
+| [CategoricalCrossentropy](../categoricalcrossentropy/README.md) | ![loss.png](assets/loss.png) | Computes the crossentropy loss between the labels and predictions.​ |
+| [CategoricalHinge](../categoricalhinge/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the categorical hinge loss between y_true and y_pred.​ |
+| [CosineSimilarity](../cosinesimilarity/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the cosine similarity between true labels and predicted labels.​ |
+| [Hinge](../hinge/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the hinge loss between y_true and y_pred.​ |
+| [Huber](../huber/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the Huber loss between y_true and y_pred.​ |
+| [KLDivergence](../kldivergence/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes Kullback-Leibler divergence loss between y_true and y_pred.​ |
+| [LogCosh](../logcosh/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the logarithm of the hyperbolic cosine of the prediction error. |
+| [MeanAbsoluteError](../meanabsoluteerror/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean of absolute difference between labels and predictions.​ |
+| [MeanAbsolutePercentageError](../meanabsolutepercentageerror/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean absolute percentage error between y_true and y_pred.​ |
+| [MeanSquaredError](../meansquarederror/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean of squares of errors between labels and predictions. |
+| [MeanSquaredLogarithmicError](../meansquaredlogarithmicerror/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the mean squared logarithmic error between y_true and y_pred. |
+| [Poisson](../poisson/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the Poisson loss between y_true and y_pred.​ |
+| [SquaredHinge](../squaredhinge/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | Computes the squared hinge loss between y_true and y_pred.​ |
+| [Custom](../custom/README.md) | ![Image Missing.Svg](../../../../../_assets/image-missing.svg) | A custom loss function allows you to define your own loss logic, making it possible to go beyond the standard loss functions provided by libraries. |

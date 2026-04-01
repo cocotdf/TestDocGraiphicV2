@@ -49,7 +49,7 @@
 </li>
 </ul>
 
-<p>One advantage of the MAE is that it is easy to interpret, as it gives a direct average measure of error in terms of the unit of the variable being predicted. Another advantage is that it penalizes large errors less than other metrics such as Mean Squared Error (<a href="https://haibal.com/documentation/mean-squared-error/">MSE</a>), which may be preferable if you want to avoid giving too much importance to outliers.</p>
+<p>One advantage of the MAE is that it is easy to interpret, as it gives a direct average measure of error in terms of the unit of the variable being predicted. Another advantage is that it penalizes large errors less than other metrics such as Mean Squared Error (<a href="../meansquarederror-2/README.md">MSE</a>), which may be preferable if you want to avoid giving too much importance to outliers.</p>
 
 <h2>Calculation</h2>
 
