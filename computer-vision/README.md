@@ -11,13 +11,13 @@ Le toolkit Computer Vision regroupe les fonctions de traitement d'image, les out
 <table>
   <tbody>
     <tr>
-      <td><a href="general-computer-vision/README.md"><strong>General</strong></a><br/>Guides de demarrage, FAQ, display et deploiement.</td>
       <td><a href="installation-guide-computer-vision/README.md"><strong>Installation Guide</strong></a><br/>Installer et configurer le toolkit.</td>
-      <td><a href="functions/README.md"><strong>Functions</strong></a><br/>Bibliotheque de fonctions de traitement et d&apos;analyse.</td>
+      <td><a href="general-computer-vision/README.md"><strong>General</strong></a><br/>Guides de demarrage, FAQ, display et deploiement.</td>
+      <td><a href="tools/README.md"><strong>Tools</strong></a><br/>Manipulation d&apos;images, ROI, fichiers et affichage.</td>
     </tr>
     <tr>
-      <td><a href="tools/README.md"><strong>Tools</strong></a><br/>Manipulation d&apos;images, ROI, fichiers et affichage.</td>
       <td><a href="session/README.md"><strong>Session</strong></a><br/>Ouverture, configuration et fermeture des sessions.</td>
+      <td><a href="functions/README.md"><strong>Functions</strong></a><br/>Bibliotheque de fonctions de traitement et d&apos;analyse.</td>
       <td><a href="video-writter/README.md"><strong>Video Writter</strong></a><br/>Lecture, ecriture et gestion de flux video.</td>
     </tr>
   </tbody>
@@ -25,9 +25,9 @@ Le toolkit Computer Vision regroupe les fonctions de traitement d'image, les out
 
 ## Sections disponibles
 
-- [Functions](functions/README.md)
-- [General](general-computer-vision/README.md)
 - [Installation guide](installation-guide-computer-vision/README.md)
-- [Session](session/README.md)
+- [General](general-computer-vision/README.md)
 - [Tools](tools/README.md)
+- [Session](session/README.md)
+- [Functions](functions/README.md)
 - [Video Writter](video-writter/README.md)

@@ -2,9 +2,9 @@
 
 ## Sous-categories
 
-- [Advanced](advanced/README.md)
-- [Architecture](architecture/README.md)
-- [General](general/README.md)
 - [Installation guide](installation-guide/README.md)
-- [More](more-deep-learning/README.md)
+- [General](general/README.md)
+- [Architecture](architecture/README.md)
 - [Runtime](runtime/README.md)
+- [Advanced](advanced/README.md)
+- [More](more-deep-learning/README.md)
