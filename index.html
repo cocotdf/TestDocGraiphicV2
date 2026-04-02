@@ -719,32 +719,30 @@
     }
 
     .graiphic-nav-chevron.is-plusminus {
-      border: 1px solid var(--sidebar-border-color);
+      align-self: center;
+      border: 1px solid color-mix(in srgb, var(--theme-color) 14%, var(--sidebar-border-color));
       border-radius: 0.35rem;
-      margin-top: 0.12rem;
-      margin-left: 0.08rem;
-      background: color-mix(in srgb, var(--theme-color) 10%, var(--surface-bg));
+      background: color-mix(in srgb, var(--theme-color) 12%, white);
       color: var(--heading-color);
-      box-shadow: 0 4px 12px var(--surface-shadow);
+      box-shadow: 0 2px 8px var(--surface-shadow);
       font-weight: 800;
       transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .graiphic-nav-toggle:hover .graiphic-nav-chevron.is-plusminus {
       border-color: var(--button-border);
-      background: color-mix(in srgb, var(--theme-color) 16%, var(--surface-bg));
+      background: color-mix(in srgb, var(--theme-color) 18%, white);
       transform: translateY(-1px);
     }
 
     .graiphic-nav-toggle.is-active .graiphic-nav-chevron.is-plusminus {
       color: var(--theme-color);
       border-color: var(--button-border);
-      background: color-mix(in srgb, var(--theme-color) 16%, var(--surface-bg));
+      background: color-mix(in srgb, var(--theme-color) 18%, white);
     }
 
     html[data-theme="dark"] .graiphic-nav-chevron.is-plusminus {
-      margin-top: 0.08rem;
-      margin-left: 0.04rem;
+      border-color: var(--sidebar-border-color);
       background: var(--button-bg);
     }
 
