@@ -149,12 +149,94 @@
     }
 
     .search .results-panel {
+      display: none;
       margin-top: 0.5rem;
       border-radius: 12px;
       border: 1px solid #dbe5ef;
       box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
       overflow: hidden;
       background: #ffffff;
+    }
+
+    .search .results-panel.show {
+      display: block;
+    }
+
+    .search .input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .search .clear-button {
+      display: none;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .search .clear-button.show {
+      display: inline-flex;
+    }
+
+    .search .matching-post {
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .search .matching-post:last-child {
+      border-bottom: 0;
+    }
+
+    .search .matching-post a {
+      display: block;
+      padding: 0.9rem 1rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .search .matching-post a:hover {
+      background: #f8fafc;
+    }
+
+    .search .matching-post h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+      line-height: 1.35;
+      color: #0f172a;
+    }
+
+    .search .matching-post p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: #475569;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .search .search-keyword {
+      font-style: normal;
+      font-weight: 700;
+      color: #0f766e;
+    }
+
+    .search p.empty {
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+      color: #475569;
     }
 
     .app-name {
@@ -1159,106 +1241,354 @@
       });
     }
 
-    function placeSidebarSearch(attempt) {
+    function ensureSearchUi() {
       var sidebar = document.querySelector(".sidebar");
       if (!sidebar) {
-        return;
+        return null;
       }
 
-      var search = document.querySelector("div.search");
-      var appName = sidebar.querySelector(".app-name");
-
+      var search = sidebar.querySelector(".search");
       if (!search) {
-        if ((attempt || 0) < 12) {
-          window.setTimeout(function () {
-            placeSidebarSearch((attempt || 0) + 1);
-          }, 120);
-        }
-        return;
+        search = document.createElement("div");
+        search.className = "search";
+        search.innerHTML =
+          '<div class="input-wrap">' +
+            '<input type="search" value="" aria-label="Search text" placeholder="Search in the documentation" />' +
+            '<button class="clear-button" type="button" aria-label="Clear search">×</button>' +
+          '</div>' +
+          '<div class="results-panel"></div>';
       }
 
+      var appName = sidebar.querySelector(".app-name");
       if (appName) {
         if (search.previousElementSibling !== null || sidebar.firstElementChild !== search || search.nextElementSibling !== appName) {
           sidebar.insertBefore(search, appName);
         }
-        bindSearchResultFiltering();
-        return;
-      }
-
-      if (sidebar.firstElementChild !== search) {
+      } else if (sidebar.firstElementChild !== search) {
         sidebar.insertBefore(search, sidebar.firstElementChild);
       }
 
-      bindSearchResultFiltering();
+      return search;
     }
 
-    function filterSearchResultLinks() {
-      var searchRoot = document.querySelector(".search");
+    function placeSidebarSearch() {
+      var searchRoot = ensureSearchUi();
+      if (!searchRoot) {
+        return;
+      }
+
+      bindClientSearch(searchRoot);
+      renderClientSearchResults(window.__GRAIPHIC_SEARCH_QUERY__ || "");
+    }
+
+    function normalizeSearchText(text) {
+      return (text || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function tokenizeSearchQuery(query) {
+      return normalizeSearchText(query)
+        .split(/[\s\-_/]+/)
+        .filter(Boolean);
+    }
+
+    function escapeRegExp(text) {
+      return String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function highlightSearchTerms(text, terms) {
+      var output = escapeHtml(text || "");
+      terms.forEach(function (term) {
+        if (!term) {
+          return;
+        }
+
+        output = output.replace(new RegExp("(" + escapeRegExp(term) + ")", "ig"), '<em class="search-keyword">$1</em>');
+      });
+      return output;
+    }
+
+    function buildSearchHaystack(entry) {
+      return normalizeSearchText([
+        entry.title || "",
+        entry.keywords || "",
+        entry.path || "",
+        entry.content || ""
+      ].join(" "));
+    }
+
+    function buildSearchExcerpt(entry, terms) {
+      var content = (entry.content || "").trim();
+      if (!content) {
+        return "";
+      }
+
+      var normalizedContent = normalizeSearchText(content);
+      var firstIndex = -1;
+
+      terms.forEach(function (term) {
+        if (!term) {
+          return;
+        }
+
+        var index = normalizedContent.indexOf(term);
+        if (index >= 0 && (firstIndex === -1 || index < firstIndex)) {
+          firstIndex = index;
+        }
+      });
+
+      if (firstIndex < 0) {
+        return content.slice(0, 180);
+      }
+
+      var start = Math.max(0, firstIndex - 60);
+      var end = Math.min(content.length, start + 180);
+      return (start > 0 ? "..." : "") + content.slice(start, end) + (end < content.length ? "..." : "");
+    }
+
+    function scoreSearchEntry(entry, normalizedQuery, terms) {
+      var title = normalizeSearchText(entry.title || "");
+      var keywords = normalizeSearchText(entry.keywords || "");
+      var path = normalizeSearchText(entry.path || "");
+      var compactQuery = normalizedQuery.replace(/[^a-z0-9]/g, "");
+      var compactTitle = title.replace(/[^a-z0-9]/g, "");
+      var compactKeywords = keywords.replace(/[^a-z0-9]/g, "");
+      var compactPath = path.replace(/[^a-z0-9]/g, "");
+      var haystack = buildSearchHaystack(entry);
+
+      if (!terms.length) {
+        return 0;
+      }
+
+      var allTermsPresent = terms.every(function (term) {
+        return haystack.indexOf(term) >= 0;
+      });
+      if (!allTermsPresent) {
+        return 0;
+      }
+
+      var score = 0;
+
+      if (title === normalizedQuery) {
+        score += 220;
+      } else if (title.indexOf(normalizedQuery) === 0) {
+        score += 180;
+        score += Math.max(0, 30 - Math.max(0, title.length - normalizedQuery.length));
+      } else if (title.indexOf(normalizedQuery) >= 0) {
+        score += 140;
+      }
+
+      if (keywords.indexOf(normalizedQuery) >= 0) {
+        score += 90;
+      }
+
+      if (path.indexOf(normalizedQuery) >= 0) {
+        score += 70;
+      }
+
+      if (compactQuery && compactKeywords.indexOf(compactQuery) >= 0) {
+        score += 50;
+      }
+
+      if (compactQuery && compactPath.indexOf(compactQuery) >= 0) {
+        score += 40;
+      }
+
+      if (compactQuery && compactTitle.indexOf(compactQuery) >= 0) {
+        score += 20;
+      }
+
+      var pathDepth = (entry.path || "").split("/").filter(Boolean).length;
+      score += Math.max(0, 42 - pathDepth * 4);
+
+      terms.forEach(function (term) {
+        if (title.indexOf(term) >= 0) {
+          score += 35;
+        } else if (keywords.indexOf(term) >= 0) {
+          score += 22;
+        } else if (path.indexOf(term) >= 0) {
+          score += 18;
+        } else if (haystack.indexOf(term) >= 0) {
+          score += 8;
+        }
+      });
+
+      return score;
+    }
+
+    function docsifyRouteForSearchResult(path) {
+      return docsifyRouteForPath(path || "/README.md");
+    }
+
+    function runClientSearch(query) {
+      var normalizedQuery = normalizeSearchText(query);
+      var terms = tokenizeSearchQuery(query);
+      if (!normalizedQuery || !terms.length) {
+        return [];
+      }
+
+      return (window.__GRAIPHIC_SEARCH_INDEX__ || [])
+        .map(function (entry) {
+          return {
+            entry: entry,
+            score: scoreSearchEntry(entry, normalizedQuery, terms)
+          };
+        })
+        .filter(function (result) {
+          return result.score > 0;
+        })
+        .sort(function (left, right) {
+          if (right.score !== left.score) {
+            return right.score - left.score;
+          }
+          var leftTitle = String(left.entry.title || "");
+          var rightTitle = String(right.entry.title || "");
+          if (leftTitle.length !== rightTitle.length) {
+            return leftTitle.length - rightTitle.length;
+          }
+          return leftTitle.localeCompare(rightTitle);
+        })
+        .slice(0, 12)
+        .map(function (result) {
+          return result.entry;
+        });
+    }
+
+    function renderClientSearchResults(query) {
+      var searchRoot = ensureSearchUi();
       if (!searchRoot) {
         return;
       }
 
       var resultsPanel = searchRoot.querySelector(".results-panel");
-      if (!resultsPanel) {
+      var clearButton = searchRoot.querySelector(".clear-button");
+      var input = searchRoot.querySelector('input[type="search"]');
+
+      window.__GRAIPHIC_SEARCH_QUERY__ = query || "";
+
+      if (input && input.value !== window.__GRAIPHIC_SEARCH_QUERY__) {
+        input.value = window.__GRAIPHIC_SEARCH_QUERY__;
+      }
+
+      if (!resultsPanel || !clearButton) {
         return;
       }
 
-      var knownDocPaths = window.__GRAIPHIC_KNOWN_DOC_PATHS__ || {};
-      if (!hasKnownDocPaths(knownDocPaths)) {
+      if (!query || !query.trim()) {
+        resultsPanel.classList.remove("show");
+        resultsPanel.innerHTML = "";
+        clearButton.classList.remove("show");
         return;
       }
 
-      Array.prototype.slice.call(resultsPanel.querySelectorAll("a[href]")).forEach(function (anchor) {
-        if (shouldKeepSearchResultHref(anchor.getAttribute("href"), knownDocPaths)) {
+      clearButton.classList.add("show");
+
+      var terms = tokenizeSearchQuery(query);
+      var results = runClientSearch(query);
+
+      if (!results.length) {
+        resultsPanel.classList.add("show");
+        resultsPanel.innerHTML = '<p class="empty">No matching page found</p>';
+        return;
+      }
+
+      resultsPanel.classList.add("show");
+      resultsPanel.innerHTML = results.map(function (entry) {
+        return (
+          '<div class="matching-post">' +
+            '<a href="' + docsifyRouteForSearchResult(entry.path) + '">' +
+              '<h2>' + highlightSearchTerms(entry.title || "", terms) + '</h2>' +
+              '<p>' + highlightSearchTerms(buildSearchExcerpt(entry, terms), terms) + '</p>' +
+            '</a>' +
+          '</div>'
+        );
+      }).join("");
+    }
+
+    function buildFallbackSearchIndex(navData) {
+      var items = [];
+      var seen = {};
+
+      function addItem(title, path) {
+        var normalizedPath = normalizeDocPath(path || "/README.md");
+        if (seen[normalizedPath]) {
           return;
         }
 
-        var item = anchor.closest(".matching-post, li") || anchor.parentElement;
-        if (item && item.parentNode) {
-          item.parentNode.removeChild(item);
+        seen[normalizedPath] = true;
+        items.push({
+          title: title || normalizedPath.replace(/^\//, ""),
+          path: normalizedPath,
+          keywords: normalizedPath.replace(/^\//, "").replace(/\/README\.md$/i, "").replace(/[\/_-]+/g, " "),
+          content: ""
+        });
+      }
+
+      function visitNodes(nodes) {
+        (nodes || []).forEach(function (node) {
+          if (!node) {
+            return;
+          }
+
+          if (node.path) {
+            addItem(node.title, node.path);
+          }
+
+          visitNodes(node.children);
+        });
+      }
+
+      addItem("Graiphic Toolkits Documentation", "/README.md");
+      (navData && navData.sections || []).forEach(function (section) {
+        visitNodes(section.children);
+      });
+
+      return items;
+    }
+
+    function bindClientSearch(searchRoot) {
+      if (!searchRoot || searchRoot.__graiphicSearchBound) {
+        return;
+      }
+
+      var input = searchRoot.querySelector('input[type="search"]');
+      var clearButton = searchRoot.querySelector(".clear-button");
+      var debounceHandle = null;
+
+      if (input) {
+        input.addEventListener("input", function (event) {
+          window.clearTimeout(debounceHandle);
+          debounceHandle = window.setTimeout(function () {
+            renderClientSearchResults(event.target.value);
+          }, 60);
+        });
+      }
+
+      if (clearButton) {
+        clearButton.addEventListener("click", function () {
+          if (input) {
+            input.value = "";
+            input.focus();
+          }
+          renderClientSearchResults("");
+        });
+      }
+
+      searchRoot.addEventListener("click", function (event) {
+        if (event.target.closest(".matching-post a")) {
+          return;
+        }
+
+        if (!event.target.closest(".input-wrap")) {
+          event.stopPropagation();
         }
       });
 
-      var hasValidResults = !!resultsPanel.querySelector("a[href]");
-      var emptyState = resultsPanel.querySelector(".empty");
-
-      if (!hasValidResults) {
-        if (!emptyState) {
-          emptyState = document.createElement("p");
-          emptyState.className = "empty";
-          emptyState.textContent = "No matching page found";
-          resultsPanel.innerHTML = "";
-          resultsPanel.appendChild(emptyState);
-        }
-        return;
-      }
-
-      if (emptyState && emptyState.parentNode) {
-        emptyState.parentNode.removeChild(emptyState);
-      }
-    }
-
-    function bindSearchResultFiltering() {
-      var searchRoot = document.querySelector(".search");
-      if (!searchRoot || searchRoot.__graiphicSearchFilterBound) {
-        filterSearchResultLinks();
-        return;
-      }
-
-      var scheduleFilter = function () {
-        window.setTimeout(filterSearchResultLinks, 0);
-      };
-
-      var input = searchRoot.querySelector("input");
-      if (input) {
-        input.addEventListener("input", scheduleFilter);
-      }
-
-      var observer = new MutationObserver(scheduleFilter);
-      observer.observe(searchRoot, { childList: true, subtree: true });
-
-      searchRoot.__graiphicSearchFilterBound = true;
-      filterSearchResultLinks();
+      searchRoot.__graiphicSearchBound = true;
     }
 
     function renderNavigationNodes(nodes, currentFile, depth, parentPath) {
@@ -1506,9 +1836,13 @@
       });
     }
 
-    function startDocsify(navData) {
+    function startDocsify(navData, searchData) {
       window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
       window.__GRAIPHIC_KNOWN_DOC_PATHS__ = collectKnownDocPaths(window.__GRAIPHIC_NAV__);
+      window.__GRAIPHIC_SEARCH_INDEX__ = searchData && Array.isArray(searchData.items)
+        ? searchData.items
+        : buildFallbackSearchIndex(window.__GRAIPHIC_NAV__);
+      window.__GRAIPHIC_SEARCH_QUERY__ = window.__GRAIPHIC_SEARCH_QUERY__ || "";
       window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} };
 
       window.$docsify = {
@@ -1524,13 +1858,6 @@
         relativePath: true,
         alias: {
           "/.*/_navbar.md": "/_navbar.md"
-        },
-        search: {
-          paths: window.__GRAIPHIC_NAV__.searchPaths || "auto",
-          placeholder: "Search in the documentation",
-          noData: "No matching page found",
-          depth: 4,
-          hideOtherSidebarContent: false
         },
         plugins: [
           function (hook, vm) {
@@ -1553,7 +1880,7 @@
               loadSidebarWidth();
               bindSidebarResize();
               renderSidebarNavigation(vm);
-              placeSidebarSearch(0);
+              placeSidebarSearch();
             });
 
             hook.doneEach(function () {
@@ -1585,35 +1912,43 @@
               enhanceParameterImages(document.querySelector(".markdown-section"));
               enhanceContentIllustrationImages(document.querySelector(".markdown-section"));
               renderSidebarNavigation(vm);
-              placeSidebarSearch(0);
-              filterSearchResultLinks();
+              placeSidebarSearch();
             });
           }
         ]
       };
 
-      loadScript("https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js")
-        .then(function () {
-          return loadScript("https://cdn.jsdelivr.net/npm/docsify@4");
-        })
+      loadScript("https://cdn.jsdelivr.net/npm/docsify@4")
         .catch(function (error) {
           console.error("Failed to load Docsify assets", error);
         });
     }
 
-    fetch("nav-tree.json")
-      .then(function (response) {
+    Promise.all([
+      fetch("nav-tree.json").then(function (response) {
         if (!response.ok) {
           throw new Error("Failed to load navigation manifest");
         }
         return response.json();
-      })
-      .then(function (navData) {
-        startDocsify(navData);
+      }),
+      fetch("search-manifest.json")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Failed to load search manifest");
+          }
+          return response.json();
+        })
+        .catch(function (error) {
+          console.warn("Search manifest unavailable, falling back to title-only search.", error);
+          return null;
+        })
+    ])
+      .then(function (results) {
+        startDocsify(results[0], results[1]);
       })
       .catch(function (error) {
-        console.warn("Navigation manifest unavailable, falling back to default search paths.", error);
-        startDocsify({ sections: [], searchPaths: "auto" });
+        console.warn("Navigation manifest unavailable, falling back to minimal navigation.", error);
+        startDocsify({ sections: [], searchPaths: "auto" }, { items: [] });
       });
   </script>
 </body>
