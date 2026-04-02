@@ -744,9 +744,14 @@
       return normalizeDocPath(candidate);
     }
 
-    function isKnownSearchResultHref(rawHref, knownDocPaths) {
+    function shouldKeepSearchResultHref(rawHref, knownDocPaths) {
       var docPath = extractSearchResultDocPath(rawHref);
-      return !!(docPath && knownDocPaths && knownDocPaths[docPath]);
+
+      if (!docPath) {
+        return true;
+      }
+
+      return !!(knownDocPaths && knownDocPaths[docPath]);
     }
 
     function applySidebarWidth(width) {
@@ -1204,7 +1209,7 @@
       }
 
       Array.prototype.slice.call(resultsPanel.querySelectorAll("a[href]")).forEach(function (anchor) {
-        if (isKnownSearchResultHref(anchor.getAttribute("href"), knownDocPaths)) {
+        if (shouldKeepSearchResultHref(anchor.getAttribute("href"), knownDocPaths)) {
           return;
         }
 
@@ -1522,7 +1527,6 @@
         },
         search: {
           paths: window.__GRAIPHIC_NAV__.searchPaths || "auto",
-          namespace: "graiphic-docs-v2-live",
           placeholder: "Search in the documentation",
           noData: "No matching page found",
           depth: 4,
