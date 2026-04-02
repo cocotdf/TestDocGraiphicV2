@@ -1,3 +1,9 @@
+<div class="go-pages-link" data-render-target="github">
+  <a href="https://cocotdf.github.io/TestDocGraiphicV2/">
+    <img src="./assets/open-github-pages-banner.svg" alt="Open the GitHub Pages version" />
+  </a>
+</div>
+
 <div class="graiphic-home-hero">
   <p class="graiphic-home-kicker">Unified LabVIEW documentation for AI, vision, acceleration, and deployable systems.</p>
   <p class="graiphic-home-lead">
