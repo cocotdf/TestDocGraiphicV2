@@ -721,23 +721,35 @@
     .graiphic-nav-chevron.is-plusminus {
       border: 1px solid var(--sidebar-border-color);
       border-radius: 0.35rem;
-      background: var(--button-bg);
+      margin-top: 0.12rem;
+      margin-left: 0.08rem;
+      background: color-mix(in srgb, var(--theme-color) 10%, var(--surface-bg));
       color: var(--heading-color);
       box-shadow: 0 4px 12px var(--surface-shadow);
       font-weight: 800;
-      transform: translateY(0.02rem);
       transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .graiphic-nav-toggle:hover .graiphic-nav-chevron.is-plusminus {
       border-color: var(--button-border);
-      background: var(--button-bg-hover);
+      background: color-mix(in srgb, var(--theme-color) 16%, var(--surface-bg));
       transform: translateY(-1px);
     }
 
     .graiphic-nav-toggle.is-active .graiphic-nav-chevron.is-plusminus {
       color: var(--theme-color);
       border-color: var(--button-border);
+      background: color-mix(in srgb, var(--theme-color) 16%, var(--surface-bg));
+    }
+
+    html[data-theme="dark"] .graiphic-nav-chevron.is-plusminus {
+      margin-top: 0.08rem;
+      margin-left: 0.04rem;
+      background: var(--button-bg);
+    }
+
+    html[data-theme="dark"] .graiphic-nav-toggle:hover .graiphic-nav-chevron.is-plusminus,
+    html[data-theme="dark"] .graiphic-nav-toggle.is-active .graiphic-nav-chevron.is-plusminus {
       background: var(--button-bg-hover);
     }
 
