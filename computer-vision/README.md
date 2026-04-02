@@ -2,7 +2,10 @@
 
 <div class="graiphic-home-hero">
   <p align="center"><img src="../img/computervision.svg" alt="Computer Vision Toolkit icon" width="170" /></p>
-  <p class="graiphic-home-kicker">Image processing, display flows, sessions, and LabVIEW-ready vision tooling.</p>
+  <p class="graiphic-home-kicker">
+    <span class="graiphic-home-kicker-line">Image processing, display flows, sessions,</span>
+    <span class="graiphic-home-kicker-line">and LabVIEW-ready vision tooling.</span>
+  </p>
   <p class="graiphic-home-lead">
     The Computer Vision Toolkit gathers image processing functions, manipulation utilities,
     display helpers, session management, and video writer tools. Use it to build visual

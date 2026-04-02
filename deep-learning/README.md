@@ -2,7 +2,10 @@
 
 <div class="graiphic-home-hero">
   <p align="center"><img src="../img/deeplearning.svg" alt="Deep Learning Toolkit icon" width="170" /></p>
-  <p class="graiphic-home-kicker">Build, train, inspect, and deploy neural architectures directly from LabVIEW.</p>
+  <p class="graiphic-home-kicker">
+    <span class="graiphic-home-kicker-line">Build, train, inspect, and deploy neural architectures</span>
+    <span class="graiphic-home-kicker-line">directly from LabVIEW.</span>
+  </p>
   <p class="graiphic-home-lead">
     The Deep Learning Toolkit covers model construction, graph definition, runtime execution,
     training metrics, weight management, and advanced helpers for ONNX-backed neural workflows.

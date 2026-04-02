@@ -2,7 +2,10 @@
 
 <div class="graiphic-home-hero">
   <p align="center"><img src="../img/accelerator.png" alt="Accelerator Toolkit icon" width="170" /></p>
-  <p class="graiphic-home-kicker">Hardware-aware execution for ONNX Runtime workflows in LabVIEW.</p>
+  <p class="graiphic-home-kicker">
+    <span class="graiphic-home-kicker-line">Hardware-aware execution for ONNX Runtime workflows</span>
+    <span class="graiphic-home-kicker-line">in LabVIEW.</span>
+  </p>
   <p class="graiphic-home-lead">
     The Accelerator Toolkit connects LabVIEW applications to ONNX Runtime and execution
     providers such as CUDA, TensorRT, OpenVINO, and OneDNN. Use this section to install
