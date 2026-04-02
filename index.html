@@ -30,6 +30,9 @@
     :root {
       --theme-color: #0f766e;
       --accent-color: #f97316;
+      --nav-safe-right: 18rem;
+      --nav-shift-left: 7rem;
+      --nav-shift-up: 0.6rem;
       --body-bg: #f8fafc;
       --body-bg-solid: #f8fafc;
       --body-color: #1f2937;
@@ -211,6 +214,27 @@
     .markdown-section table th,
     .markdown-section table td {
       border-color: var(--surface-border);
+      color: var(--body-color);
+    }
+
+    html[data-theme="dark"] .markdown-section table td {
+      background: color-mix(in srgb, var(--surface-bg) 94%, transparent);
+    }
+
+    html[data-theme="dark"] .markdown-section table table td {
+      background: color-mix(in srgb, var(--surface-bg) 98%, transparent);
+    }
+
+    html[data-theme="dark"] .markdown-section table td strong,
+    html[data-theme="dark"] .markdown-section table td b,
+    html[data-theme="dark"] .markdown-section table td em,
+    html[data-theme="dark"] .markdown-section table td p,
+    html[data-theme="dark"] .markdown-section table td li {
+      color: inherit;
+    }
+
+    html[data-theme="dark"] .markdown-section table td a {
+      color: var(--link-color);
     }
 
     .markdown-section td[width="64"] {
@@ -399,15 +423,18 @@
       order: 1;
       margin: 0;
       padding: 0.25rem 1rem 1rem;
+      color: var(--heading-color);
+      opacity: 1;
     }
 
     .app-name a {
-      color: var(--body-color);
+      color: var(--heading-color);
       font-size: 1.18rem;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.18;
       letter-spacing: -0.01em;
       text-decoration: none;
+      opacity: 1;
     }
 
     .app-name a:hover {
@@ -744,7 +771,7 @@
 
     .app-nav {
       width: fit-content;
-      max-width: calc(100% - 11rem);
+      max-width: calc(100% - var(--nav-safe-right));
       margin-left: auto;
       margin-right: auto;
       border-bottom: 0;
@@ -853,6 +880,10 @@
     @media screen and (min-width: 769px) {
       .app-nav {
         padding: 0.3rem 1.25rem 0.35rem;
+        transform: translate(
+          calc(var(--nav-shift-left) * -1),
+          calc(var(--nav-shift-up) * -1)
+        );
       }
 
       .sidebar {
@@ -871,6 +902,7 @@
         width: auto;
         max-width: 100%;
         padding: 0.75rem 3.9rem 0.45rem 0.85rem;
+        transform: none;
         text-align: left;
         overflow-x: auto;
         overflow-y: hidden;
