@@ -16,11 +16,6 @@
     <span class="graiphic-home-pill">AI Deployment</span>
     <span class="graiphic-home-pill">Vision &amp; CUDA</span>
   </div>
-  <div class="graiphic-home-actions">
-    <a class="graiphic-home-button graiphic-home-button-primary" href="#/README.md?id=toolkits">Browse Documentation</a>
-    <a class="graiphic-home-button graiphic-home-button-secondary" href="https://github.com/cocotdf/TestDocGraiphicV2">Open Repository</a>
-  </div>
-  <p class="graiphic-home-note">Use the search box above the navigation to jump faster through the documentation.</p>
 </div>
 
 ## Toolkits
