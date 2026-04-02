@@ -5,7 +5,10 @@
 </div>
 
 <div class="graiphic-home-hero">
-  <p class="graiphic-home-kicker">Unified LabVIEW documentation for AI, vision, acceleration, and deployable systems.</p>
+  <p class="graiphic-home-kicker">
+    <span class="graiphic-home-kicker-line">Unified LabVIEW documentation for AI, vision,</span>
+    <span class="graiphic-home-kicker-line">acceleration, and deployable systems.</span>
+  </p>
   <p class="graiphic-home-lead">
     Explore Graiphic's toolkit documentation from a single GitHub Pages experience covering SOTA, Accelerator,
     Deep Learning, Computer Vision, and CUDA. Search any guide, VI, or toolkit page directly from the left panel.

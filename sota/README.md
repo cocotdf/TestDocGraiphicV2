@@ -2,7 +2,10 @@
 
 <div class="graiphic-home-hero">
   <p align="center"><img src="../img/sota-png.png" alt="SOTA icon" width="170" /></p>
-  <p class="graiphic-home-kicker">Visual orchestration and installation entry point for Graiphic toolkits.</p>
+  <p class="graiphic-home-kicker">
+    <span class="graiphic-home-kicker-line">Visual orchestration and installation entry point</span>
+    <span class="graiphic-home-kicker-line">for Graiphic toolkits.</span>
+  </p>
   <p class="graiphic-home-lead">
     SOTA is the control layer used to install, launch, and manage Graiphic environments.
     Start here for setup, first-run guidance, and platform-level information before working
