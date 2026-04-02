@@ -433,12 +433,40 @@
     }
 
     .graiphic-nav-chevron {
-      width: 0.65rem;
-      flex: 0 0 0.65rem;
+      width: 0.95rem;
+      height: 0.95rem;
+      flex: 0 0 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: #94a3b8;
-      font-size: 0.64rem;
-      text-align: center;
-      line-height: 1.2;
+      font-size: 0.72rem;
+      line-height: 1;
+    }
+
+    .graiphic-nav-chevron.is-plusminus {
+      border: 1px solid var(--sidebar-border-color);
+      border-radius: 5px;
+      background: var(--surface-bg);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55);
+      font-weight: 700;
+    }
+
+    .graiphic-nav-toggle:hover .graiphic-nav-chevron.is-plusminus {
+      border-color: var(--button-border);
+      background: var(--surface-muted);
+    }
+
+    .graiphic-nav-toggle.is-active .graiphic-nav-chevron.is-plusminus {
+      color: var(--theme-color);
+      border-color: color-mix(in srgb, var(--theme-color) 32%, var(--sidebar-border-color));
+      background: color-mix(in srgb, var(--theme-color) 10%, var(--surface-bg));
+    }
+
+    .graiphic-nav-chevron.is-empty {
+      border-color: transparent;
+      background: transparent;
+      box-shadow: none;
     }
 
     .graiphic-nav-label {
@@ -996,20 +1024,20 @@
           var manuallyCollapsed = !!navState.collapsedPaths[normalizedNodePath];
           var open = hasChildren && !manuallyCollapsed && (activeTrail || manuallyExpanded);
           var padding = 10 + depth * 13;
-          var chevron = hasChildren ? (open ? "v" : ">") : "";
+          var chevron = hasChildren ? (open ? "−" : "+") : "";
           var cssClass = (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
           var itemHtml = "";
 
           if (isCategory) {
             itemHtml =
-              '<button class="graiphic-nav-toggle ' + cssClass + '" type="button" data-nav-path="' + escapeHtml(normalizedNodePath) + '" style="padding-left:' + padding + 'px">' +
-                '<span class="graiphic-nav-chevron">' + chevron + '</span>' +
+              '<button class="graiphic-nav-toggle ' + cssClass + '" type="button" aria-expanded="' + (open ? "true" : "false") + '" data-nav-path="' + escapeHtml(normalizedNodePath) + '" style="padding-left:' + padding + 'px">' +
+                '<span class="graiphic-nav-chevron is-plusminus' + (open ? ' is-open' : '') + '">' + chevron + '</span>' +
                 '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
               "</button>";
           } else {
             itemHtml =
               '<a class="graiphic-nav-link ' + cssClass + '" href="' + docsifyRouteForPath(node.path) + '" style="padding-left:' + padding + 'px">' +
-                '<span class="graiphic-nav-chevron"></span>' +
+                '<span class="graiphic-nav-chevron is-empty"></span>' +
                 '<span class="graiphic-nav-label">' + escapeHtml(node.title) + '</span>' +
               "</a>";
           }
