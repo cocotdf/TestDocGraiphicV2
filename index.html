@@ -707,34 +707,38 @@
     }
 
     .graiphic-nav-chevron {
-      width: 0.95rem;
-      height: 0.95rem;
-      flex: 0 0 0.95rem;
+      width: 1.15rem;
+      height: 1.15rem;
+      flex: 0 0 1.15rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       color: var(--muted-color);
-      font-size: 0.72rem;
+      font-size: 0.88rem;
       line-height: 1;
     }
 
     .graiphic-nav-chevron.is-plusminus {
       border: 1px solid var(--sidebar-border-color);
-      border-radius: 5px;
-      background: var(--surface-bg);
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
-      font-weight: 700;
+      border-radius: 0.35rem;
+      background: var(--button-bg);
+      color: var(--heading-color);
+      box-shadow: 0 4px 12px var(--surface-shadow);
+      font-weight: 800;
+      transform: translateY(0.02rem);
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .graiphic-nav-toggle:hover .graiphic-nav-chevron.is-plusminus {
       border-color: var(--button-border);
-      background: var(--surface-muted);
+      background: var(--button-bg-hover);
+      transform: translateY(-1px);
     }
 
     .graiphic-nav-toggle.is-active .graiphic-nav-chevron.is-plusminus {
       color: var(--theme-color);
-      border-color: color-mix(in srgb, var(--theme-color) 32%, var(--sidebar-border-color));
-      background: color-mix(in srgb, var(--theme-color) 10%, var(--surface-bg));
+      border-color: var(--button-border);
+      background: var(--button-bg-hover);
     }
 
     .graiphic-nav-chevron.is-empty {
@@ -1999,7 +2003,7 @@
           var manuallyCollapsed = !!navState.collapsedPaths[normalizedNodePath];
           var open = hasChildren && !manuallyCollapsed && (activeTrail || manuallyExpanded);
           var padding = 10 + depth * 13;
-          var chevron = hasChildren ? (open ? "−" : "+") : "";
+          var chevron = hasChildren ? (open ? "-" : "+") : "";
           var cssClass = (isCategory ? "is-category" : "is-page") + (active ? " is-active" : "");
           var itemHtml = "";
 
