@@ -1026,11 +1026,6 @@
         return false;
       }
 
-      var nearestLabel = normalizeHeadingLabel(nearestHeading.textContent);
-      if (nearestHeading.tagName === "H2" && nearestLabel === "description") {
-        return true;
-      }
-
       if ((nearestHeading.tagName === "H2" || nearestHeading.tagName === "H3" || nearestHeading.tagName === "H4") && closestExampleSectionHeading(root, img)) {
         return true;
       }
