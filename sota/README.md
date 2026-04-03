@@ -1,7 +1,7 @@
 # SOTA
 
 <div class="graiphic-home-hero">
-  <p align="center"><img src="../img/sota-png.png" alt="SOTA icon" width="170" /></p>
+  <p align="center"><img src="../img/sota-png.png" alt="SOTA icon" width="128" /></p>
   <p class="graiphic-home-kicker">
     <span class="graiphic-home-kicker-line">Visual orchestration and installation entry point</span>
     <span class="graiphic-home-kicker-line">for Graiphic toolkits.</span>

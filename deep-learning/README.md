@@ -1,7 +1,7 @@
 # Deep Learning Toolkit
 
 <div class="graiphic-home-hero">
-  <p align="center"><img src="../img/deeplearning.svg" alt="Deep Learning Toolkit icon" width="170" /></p>
+  <p align="center"><img src="../img/deeplearning.svg" alt="Deep Learning Toolkit icon" width="128" /></p>
   <p class="graiphic-home-kicker">
     <span class="graiphic-home-kicker-line">Build, train, inspect, and deploy neural architectures</span>
     <span class="graiphic-home-kicker-line">directly from LabVIEW.</span>

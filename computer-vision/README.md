@@ -1,7 +1,7 @@
 # Computer Vision Toolkit
 
 <div class="graiphic-home-hero">
-  <p align="center"><img src="../img/computervision.svg" alt="Computer Vision Toolkit icon" width="170" /></p>
+  <p align="center"><img src="../img/computervision.svg" alt="Computer Vision Toolkit icon" width="128" /></p>
   <p class="graiphic-home-kicker">
     <span class="graiphic-home-kicker-line">Image processing, display flows, sessions,</span>
     <span class="graiphic-home-kicker-line">and LabVIEW-ready vision tooling.</span>

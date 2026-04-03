@@ -1,7 +1,7 @@
 # CUDA Toolkit
 
 <div class="graiphic-home-hero">
-  <p align="center"><img src="../img/cuda-module_1.png" alt="CUDA Toolkit icon" width="170" /></p>
+  <p align="center"><img src="../img/cuda-module_1.png" alt="CUDA Toolkit icon" width="128" /></p>
   <p class="graiphic-home-kicker">
     <span class="graiphic-home-kicker-line">GPU execution, tensor memory control,</span>
     <span class="graiphic-home-kicker-line">and CUDA-oriented operators for LabVIEW.</span>
