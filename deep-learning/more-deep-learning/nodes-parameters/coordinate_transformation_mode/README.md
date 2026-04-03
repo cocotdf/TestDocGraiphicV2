@@ -9,146 +9,55 @@
   </tbody>
 </table>
 
-<p>The coordinate of each dimension is transformed individually. Let’s describe a case using axis x as an example. Denote <code>x_resized</code> as the coordinate of axis x in the resized tensor, <code>x_original</code> as the coordinate of axis x in the original tensor, <code>length_original</code> as the length of the original tensor in axis x, <code>length_resized</code> as the length of the resized tensor in axis x, <code>scale = length_resized / length_original</code>, <code>output_width</code> the target length on the axis x which can be a fractional number when it is calculated out of a scale factor, and <code>output_width_int</code> the effective output width as an integer.</p>
+<p>The coordinate of each dimension is transformed individually. Using axis <code>x</code> as an example:</p>
 
-<p>if coordinate_transformation_mode is <code>"half_pixel"</code>,</p>
+<ul>
+  <li><code>x_resized</code> is the coordinate of axis <code>x</code> in the resized tensor.</li>
+  <li><code>x_original</code> is the coordinate of axis <code>x</code> in the original tensor.</li>
+  <li><code>length_original</code> is the length of the original tensor on axis <code>x</code>.</li>
+  <li><code>length_resized</code> is the length of the resized tensor on axis <code>x</code>.</li>
+  <li><code>scale = length_resized / length_original</code>.</li>
+  <li><code>output_width</code> is the target length on axis <code>x</code>, which can be fractional when derived from a scale factor.</li>
+  <li><code>output_width_int</code> is the effective output width as an integer.</li>
+</ul>
 
-<p>x_original</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"half_pixel"</code>:</p>
 
-<p>=</p>
+```text
+x_original = (x_resized + 0.5) / scale - 0.5
+```
 
-<p>(</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"half_pixel_symmetric"</code>:</p>
 
-<p>x_resized</p>
+```text
+adjustment = output_width_int / output_width
+center = input_width / 2
+offset = center * (1 - adjustment)
+x_ori = offset + (x + 0.5) / scale - 0.5
+```
 
-<p>+</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"pytorch_half_pixel"</code>:</p>
 
-<p>0.5</p>
+```text
+x_original = length_resized > 1 ? (x_resized + 0.5) / scale - 0.5 : 0
+```
 
-<p>)</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"align_corners"</code>:</p>
 
-<p>/</p>
+```text
+x_original = x_resized * (length_original - 1) / (length_resized - 1)
+```
 
-<p>scale</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"asymmetric"</code>:</p>
 
-<p>-</p>
+```text
+x_original = x_resized / scale
+```
 
-<p>0.5</p>
+<p>If <code>coordinate_transformation_mode</code> is <code>"tf_crop_and_resize"</code>:</p>
 
-<p>if coordinate_transformation_mode is <code>"half_pixel_symmetric"</code>,</p>
-
-<p>adjustment</p>
-
-<p>=</p>
-
-<p>output_width_int</p>
-
-<p>/</p>
-
-<p>output_width</p>
-
-<p>center</p>
-
-<p>=</p>
-
-<p>input_width</p>
-
-<p>/</p>
-
-<p>2</p>
-
-<p>offset</p>
-
-<p>=</p>
-
-<p>center</p>
-
-<p>*</p>
-
-<p>(</p>
-
-<p>1</p>
-
-<p>-</p>
-
-<p>adjustment</p>
-
-<p>)</p>
-
-<p>x_ori</p>
-
-<p>=</p>
-
-<p>offset</p>
-
-<p>+</p>
-
-<p>(</p>
-
-<p>x</p>
-
-<p>+</p>
-
-<p>0.5</p>
-
-<p>)</p>
-
-<p>/</p>
-
-<p>scale</p>
-
-<p>-</p>
-
-<p>0.5</p>
-
-<p>if coordinate_transformation_mode is <code>"pytorch_half_pixel"</code>,</p>
-
-<p>x_original = length_resized &gt; 1 ? (x_resized + 0.5) / scale - 0.5 : 0</p>
-
-<p>if coordinate_transformation_mode is <code>"align_corners"</code>,</p>
-
-<p>x_original</p>
-
-<p>=</p>
-
-<p>x_resized</p>
-
-<p>*</p>
-
-<p>(</p>
-
-<p>length_original</p>
-
-<p>-</p>
-
-<p>1</p>
-
-<p>)</p>
-
-<p>/</p>
-
-<p>(</p>
-
-<p>length_resized</p>
-
-<p>-</p>
-
-<p>1</p>
-
-<p>)</p>
-
-<p>if coordinate_transformation_mode is <code>"asymmetric"</code>,</p>
-
-<p>x_original</p>
-
-<p>=</p>
-
-<p>x_resized</p>
-
-<p>/</p>
-
-<p>scale</p>
-
-<p>if coordinate_transformation_mode is <code>"tf_crop_and_resize"</code>,</p>
-
-<p>x_original = length_resized &gt; 1 ? start_x * (length_original - 1) + x_resized * (end_x - start_x) * (length_original - 1) / (length_resized - 1) : 0.5 * (start_x + end_x) * (length_original - 1)</p>
+```text
+x_original = length_resized > 1
+  ? start_x * (length_original - 1) + x_resized * (end_x - start_x) * (length_original - 1) / (length_resized - 1)
+  : 0.5 * (start_x + end_x) * (length_original - 1)
+```

@@ -1737,6 +1737,7 @@
       var title = normalizeSearchText(entry.title || "");
       var keywords = normalizeSearchText(entry.keywords || "");
       var path = normalizeSearchText(entry.path || "");
+      var compactHaystack;
       var compactQuery = normalizedQuery.replace(/[^a-z0-9]/g, "");
       var compactTitle = title.replace(/[^a-z0-9]/g, "");
       var compactKeywords = keywords.replace(/[^a-z0-9]/g, "");
@@ -1750,7 +1751,18 @@
       var allTermsPresent = terms.every(function (term) {
         return haystack.indexOf(term) >= 0;
       });
-      if (!allTermsPresent) {
+      compactHaystack = haystack.replace(/[^a-z0-9]/g, "");
+      var compactTermsPresent = terms.every(function (term) {
+        var compactTerm = String(term || "").replace(/[^a-z0-9]/g, "");
+        return compactTerm && compactHaystack.indexOf(compactTerm) >= 0;
+      });
+
+      if (
+        !allTermsPresent &&
+        !compactTermsPresent &&
+        !(normalizedQuery && haystack.indexOf(normalizedQuery) >= 0) &&
+        !(compactQuery && compactHaystack.indexOf(compactQuery) >= 0)
+      ) {
         return 0;
       }
 
@@ -1803,6 +1815,30 @@
       return score;
     }
 
+    function fallbackSearchEntry(entry, normalizedQuery, terms) {
+      var haystack = buildSearchHaystack(entry);
+      var compactHaystack = haystack.replace(/[^a-z0-9]/g, "");
+      var compactQuery = normalizedQuery.replace(/[^a-z0-9]/g, "");
+      var title = normalizeSearchText(entry.title || "");
+      var compactTitle = title.replace(/[^a-z0-9]/g, "");
+
+      if (
+        normalizedQuery &&
+        (
+          title.indexOf(normalizedQuery) >= 0 ||
+          haystack.indexOf(normalizedQuery) >= 0 ||
+          (compactQuery && (compactTitle.indexOf(compactQuery) >= 0 || compactHaystack.indexOf(compactQuery) >= 0))
+        )
+      ) {
+        return true;
+      }
+
+      return terms.every(function (term) {
+        var compactTerm = String(term || "").replace(/[^a-z0-9]/g, "");
+        return haystack.indexOf(term) >= 0 || (compactTerm && compactHaystack.indexOf(compactTerm) >= 0);
+      });
+    }
+
     function docsifyRouteForSearchResult(path) {
       return docsifyRouteForPath(path || "/README.md");
     }
@@ -1810,11 +1846,12 @@
     function runClientSearch(query) {
       var normalizedQuery = normalizeSearchText(query);
       var terms = tokenizeSearchQuery(query);
+      var searchIndex = window.__GRAIPHIC_SEARCH_INDEX__ || [];
       if (!normalizedQuery || !terms.length) {
         return [];
       }
 
-      return (window.__GRAIPHIC_SEARCH_INDEX__ || [])
+      var rankedResults = searchIndex
         .map(function (entry) {
           return {
             entry: entry,
@@ -1839,6 +1876,24 @@
         .map(function (result) {
           return result.entry;
         });
+
+      if (rankedResults.length) {
+        return rankedResults;
+      }
+
+      return searchIndex
+        .filter(function (entry) {
+          return fallbackSearchEntry(entry, normalizedQuery, terms);
+        })
+        .sort(function (left, right) {
+          var leftTitle = String(left.title || "");
+          var rightTitle = String(right.title || "");
+          if (leftTitle.length !== rightTitle.length) {
+            return leftTitle.length - rightTitle.length;
+          }
+          return leftTitle.localeCompare(rightTitle);
+        })
+        .slice(0, 12);
     }
 
     function renderClientSearchResults(query) {
