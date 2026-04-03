@@ -1470,14 +1470,6 @@
       }
 
       if (kind === "detail") {
-        if (naturalWidth < 110) {
-          return Math.min(180, Math.max(136, Math.round(naturalWidth * 1.7)));
-        }
-
-        if (naturalWidth < 170) {
-          return Math.min(220, Math.round(naturalWidth * 1.15));
-        }
-
         return Math.min(220, naturalWidth);
       }
 
