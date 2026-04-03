@@ -277,6 +277,20 @@
       margin: 0 auto;
     }
 
+    .markdown-section .graiphic-formula-block {
+      margin: 0 0 1rem;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      background: var(--panel-bg-soft);
+      color: var(--body-color);
+      font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.94rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
     .markdown-section [data-render-target="github"] {
       display: none !important;
     }
@@ -1524,6 +1538,160 @@
         .replace(/\s+/g, " ");
     }
 
+    function normalizeFormulaTokenText(text) {
+      return String(text || "")
+        .replace(/\u00a0/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function isBrokenFormulaParagraph(paragraph) {
+      if (!paragraph || paragraph.tagName !== "P" || paragraph.querySelector("img, table, iframe, video")) {
+        return false;
+      }
+
+      var text = normalizeFormulaTokenText(paragraph.textContent);
+      return text.length > 0 && text.length <= 24;
+    }
+
+    function isFormulaishToken(text) {
+      return (
+        /[\[\]\(\)=+\-*\/<>]/.test(text) ||
+        /^(?:or|where:?|VALID|SAME_UPPER|SAME_LOWER|Softmax|Log|floor|ceil|Min|Max|round_int|weights|labels|scores|loss|target|ignore_index|pad_shape|kernel_shape|kernel_spatial_shape|input_spatial_shape|output_spatial_shape|strides_spatial_shape|dilation|dilations|p|y|c|x|x_original|x_resized)$/i.test(text)
+      );
+    }
+
+    function normalizeFormulaLineSpacing(text) {
+      return String(text || "")
+        .replace(/\s+\]/g, "]")
+        .replace(/\[\s+/g, "[")
+        .replace(/\s+\)/g, ")")
+        .replace(/\(\s+/g, "(")
+        .replace(/\s+,/g, ",")
+        .replace(/\s+\./g, ".")
+        .replace(/\s+:/g, ":")
+        .replace(/\s{2,}/g, " ")
+        .trim();
+    }
+
+    function appendFormulaToken(line, token) {
+      if (!line) {
+        return token;
+      }
+
+      if (/^(?:=|\+|-|\*|\/|<=|>=|<|>)$/.test(token)) {
+        return line.replace(/\s+$/g, "") + " " + token + " ";
+      }
+
+      if (/^(?:\[|\(|\]\[)$/.test(token)) {
+        return line + token;
+      }
+
+      if (/^(?:\]|\)|,|:|;|\.|\.\.|\.\.\.)$/.test(token)) {
+        return line.replace(/\s+$/g, "") + token;
+      }
+
+      if (/\[$|\($|\]\[$/.test(line)) {
+        return line + token;
+      }
+
+      return line + " " + token;
+    }
+
+    function shouldStartNewFormulaLine(token, nextToken, currentLine) {
+      var trimmedLine = normalizeFormulaLineSpacing(currentLine);
+      if (!trimmedLine) {
+        return false;
+      }
+
+      if (token === "or" || token === "where:" || /^(?:VALID|SAME_UPPER|SAME_LOWER)$/i.test(token)) {
+        return true;
+      }
+
+      if (/^[A-Za-z_][A-Za-z0-9_]*$/.test(token) && nextToken === "=" && !/[\[\(]$/.test(trimmedLine)) {
+        return true;
+      }
+
+      return false;
+    }
+
+    function buildBrokenFormulaBlockText(paragraphs) {
+      var tokens = paragraphs
+        .map(function (paragraph) {
+          return normalizeFormulaTokenText(paragraph.textContent);
+        })
+        .filter(Boolean);
+
+      var lines = [];
+      var currentLine = "";
+
+      tokens.forEach(function (token, index) {
+        var nextToken = index + 1 < tokens.length ? tokens[index + 1] : "";
+
+        if (shouldStartNewFormulaLine(token, nextToken, currentLine)) {
+          lines.push(normalizeFormulaLineSpacing(currentLine));
+          currentLine = "";
+        }
+
+        currentLine = appendFormulaToken(currentLine, token);
+
+        var normalizedLine = normalizeFormulaLineSpacing(currentLine);
+        if (normalizedLine === "where:" || /^(?:VALID|SAME_UPPER|SAME_LOWER):$/i.test(normalizedLine)) {
+          lines.push(normalizedLine);
+          currentLine = "";
+        }
+      });
+
+      if (normalizeFormulaLineSpacing(currentLine)) {
+        lines.push(normalizeFormulaLineSpacing(currentLine));
+      }
+
+      return lines.filter(Boolean).join("\n");
+    }
+
+    function enhanceBrokenFormulaBlocks(root) {
+      if (!root) {
+        return;
+      }
+
+      var parents = [root].concat(Array.prototype.slice.call(root.querySelectorAll("*")));
+      parents.forEach(function (parent) {
+        var node = parent.firstElementChild;
+        while (node) {
+          if (!isBrokenFormulaParagraph(node)) {
+            node = node.nextElementSibling;
+            continue;
+          }
+
+          var run = [];
+          var cursor = node;
+          while (cursor && isBrokenFormulaParagraph(cursor)) {
+            run.push(cursor);
+            cursor = cursor.nextElementSibling;
+          }
+
+          var tokenCount = run.length;
+          var formulaishCount = run.filter(function (paragraph) {
+            return isFormulaishToken(normalizeFormulaTokenText(paragraph.textContent));
+          }).length;
+
+          if (tokenCount >= 6 && formulaishCount >= 3) {
+            var block = document.createElement("pre");
+            block.className = "graiphic-formula-block";
+            block.textContent = buildBrokenFormulaBlockText(run);
+            parent.insertBefore(block, run[0]);
+            run.forEach(function (paragraph) {
+              paragraph.remove();
+            });
+            node = block.nextElementSibling;
+            continue;
+          }
+
+          node = cursor;
+        }
+      });
+    }
+
     function closestSectionHeading(root, element, selector) {
       if (!root || !element) {
         return null;
@@ -2494,14 +2662,15 @@
                 }
               });
 
-              enhanceRenderedYouTubeLinks(document.querySelector(".markdown-section"));
-              enhanceRenderedYouTubeLinks(document.querySelector(".cover-main"));
-              enhanceParameterImages(document.querySelector(".markdown-section"));
-              enhanceContentIllustrationImages(document.querySelector(".markdown-section"));
-              renderSidebarNavigation(vm);
-              placeSidebarSearch();
-            });
-          }
+                enhanceRenderedYouTubeLinks(document.querySelector(".markdown-section"));
+                enhanceRenderedYouTubeLinks(document.querySelector(".cover-main"));
+                enhanceParameterImages(document.querySelector(".markdown-section"));
+                enhanceContentIllustrationImages(document.querySelector(".markdown-section"));
+                enhanceBrokenFormulaBlocks(document.querySelector(".markdown-section"));
+                renderSidebarNavigation(vm);
+                placeSidebarSearch();
+              });
+            }
         ]
       };
 
