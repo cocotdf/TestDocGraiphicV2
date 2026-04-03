@@ -1565,6 +1565,14 @@
       return normalizeDocPath(route || "/README.md");
     }
 
+    function isToolkitIntroductionPath(path) {
+      var normalized = normalizeDocPath(path || "");
+      return (
+        normalized.indexOf("/introduction/") >= 0 ||
+        normalized.indexOf("/introduction-sota/") >= 0
+      );
+    }
+
     function isExcludedStandaloneIllustrationContext(img) {
       return !!(
         img &&
@@ -1613,6 +1621,10 @@
         return "example";
       }
 
+      if (nearestHeading.tagName === "H1" && isToolkitIntroductionPath(currentRenderedDocPath())) {
+        return "introduction-logo";
+      }
+
       if (currentRenderedDocPath().indexOf("/hardware-compatibility/") >= 0) {
         return "hardware-compatibility";
       }
@@ -1643,6 +1655,14 @@
 
       if (mode === "hardware-compatibility") {
         return Math.min(960, Math.max(820, naturalWidth || 0));
+      }
+
+      if (mode === "introduction-logo") {
+        if (ratio >= 1.8) {
+          return Math.min(240, Math.max(200, naturalWidth));
+        }
+
+        return Math.min(180, Math.max(160, naturalWidth));
       }
 
       if (naturalHeight <= 90 || ratio >= 3.6) {
