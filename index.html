@@ -271,7 +271,7 @@
 
     .markdown-section img.graiphic-content-illustration {
       display: block;
-      width: min(640px, 100%);
+      width: auto;
       max-width: 100%;
       height: auto;
       margin: 0 auto;
@@ -1564,8 +1564,17 @@
         : null;
     }
 
+    function isExcludedStandaloneIllustrationContext(img) {
+      return !!(
+        img &&
+        img.closest(
+          ".graiphic-home-grid, .graiphic-home-card, .graiphic-home-card-media, .graiphic-home-hero, .go-pages-link, .graiphic-video-embed"
+        )
+      );
+    }
+
     function isStandaloneIllustrationImage(img) {
-      if (!img || img.closest("table")) {
+      if (!img || img.closest("table") || isExcludedStandaloneIllustrationContext(img)) {
         return false;
       }
 
@@ -1589,21 +1598,61 @@
       return meaningfulChildren.length === 1 && meaningfulChildren[0] === img;
     }
 
-    function shouldEnhanceContentIllustration(root, img) {
+    function getStandaloneIllustrationMode(root, img) {
       if (!isStandaloneIllustrationImage(img) || img.classList.contains("graiphic-param-icon") || img.classList.contains("graiphic-param-detail-image")) {
-        return false;
+        return null;
       }
 
       var nearestHeading = closestSectionHeading(root, img, "h1, h2, h3, h4");
       if (!nearestHeading) {
-        return false;
+        return null;
       }
 
       if ((nearestHeading.tagName === "H2" || nearestHeading.tagName === "H3" || nearestHeading.tagName === "H4") && closestExampleSectionHeading(root, img)) {
-        return true;
+        return "example";
       }
 
-      return false;
+      return "standalone";
+    }
+
+    function computeStandaloneIllustrationWidth(img, mode) {
+      var naturalWidth = img.naturalWidth || parseInt(img.getAttribute("width"), 10) || img.width || 0;
+      var naturalHeight = img.naturalHeight || parseInt(img.getAttribute("height"), 10) || img.height || 0;
+      var ratio = naturalHeight ? naturalWidth / naturalHeight : 1;
+
+      if (!naturalWidth) {
+        return null;
+      }
+
+      if (mode === "example") {
+        if (naturalWidth >= 1200 || naturalHeight >= 360) {
+          return 640;
+        }
+
+        if (naturalWidth >= 800 || naturalHeight >= 240) {
+          return 560;
+        }
+
+        return Math.min(640, Math.max(360, naturalWidth));
+      }
+
+      if (naturalHeight <= 90 || ratio >= 3.6) {
+        return Math.min(360, Math.max(240, naturalWidth));
+      }
+
+      if (naturalWidth >= 1200 || naturalHeight >= 320) {
+        return 520;
+      }
+
+      if (naturalWidth >= 800 || naturalHeight >= 220 || ratio >= 2.2) {
+        return 460;
+      }
+
+      if (naturalWidth >= 420) {
+        return 380;
+      }
+
+      return Math.min(360, Math.max(240, naturalWidth));
     }
 
     function enhanceContentIllustrationImages(root) {
@@ -1616,13 +1665,76 @@
           return;
         }
 
-        if (!shouldEnhanceContentIllustration(root, img)) {
+        var mode = getStandaloneIllustrationMode(root, img);
+        if (!mode) {
           return;
         }
 
-        img.dataset.graiphicContentIllustrationEnhanced = "true";
+        var targetWidth = computeStandaloneIllustrationWidth(img, mode);
+        if (!targetWidth) {
+          return;
+        }
+
+        img.dataset.graiphicContentIllustrationEnhanced = mode;
         img.classList.add("graiphic-content-illustration");
+        img.style.width = String(targetWidth) + "px";
+        img.style.height = "auto";
+        img.style.maxWidth = "100%";
       });
+    }
+
+    function isHiddenPublishedDocPath(path) {
+      var normalized = normalizeDocPath(path || "");
+      return (
+        normalized === "/_resolved/README.md" ||
+        normalized === "/_unmigrated/README.md" ||
+        normalized.indexOf("/_resolved/") === 0 ||
+        normalized.indexOf("/_unmigrated/") === 0
+      );
+    }
+
+    function sanitizePublishedNavSections(sections) {
+      return (sections || [])
+        .map(function (section) {
+          if (!section) {
+            return null;
+          }
+
+          var children = (section.children || []).filter(function (child) {
+            return child && !isHiddenPublishedDocPath(child.path);
+          });
+
+          if (!children.length) {
+            return null;
+          }
+
+          return {
+            title: section.title,
+            children: children
+          };
+        })
+        .filter(Boolean);
+    }
+
+    function sanitizePublishedNavigation(navData) {
+      return {
+        sections: sanitizePublishedNavSections(navData && navData.sections),
+        searchPaths: Array.isArray(navData && navData.searchPaths)
+          ? navData.searchPaths.filter(function (path) { return !isHiddenPublishedDocPath(path); })
+          : "auto"
+      };
+    }
+
+    function sanitizePublishedSearchIndex(searchData) {
+      if (!searchData || !Array.isArray(searchData.items)) {
+        return { items: [] };
+      }
+
+      return {
+        items: searchData.items.filter(function (entry) {
+          return entry && !isHiddenPublishedDocPath(entry.path);
+        })
+      };
     }
 
     function ensureSearchUi() {
@@ -2276,10 +2388,10 @@
     }
 
     function startDocsify(navData, searchData) {
-      window.__GRAIPHIC_NAV__ = navData || { sections: [], searchPaths: "auto" };
+      window.__GRAIPHIC_NAV__ = sanitizePublishedNavigation(navData || { sections: [], searchPaths: "auto" });
       window.__GRAIPHIC_KNOWN_DOC_PATHS__ = collectKnownDocPaths(window.__GRAIPHIC_NAV__);
       window.__GRAIPHIC_SEARCH_INDEX__ = searchData && Array.isArray(searchData.items)
-        ? searchData.items
+        ? sanitizePublishedSearchIndex(searchData).items
         : buildFallbackSearchIndex(window.__GRAIPHIC_NAV__);
       window.__GRAIPHIC_SEARCH_QUERY__ = window.__GRAIPHIC_SEARCH_QUERY__ || "";
       window.__GRAIPHIC_NAV_STATE__ = window.__GRAIPHIC_NAV_STATE__ || { expandedPaths: {}, collapsedPaths: {}, articleGroupsExpanded: {} };
