@@ -1724,6 +1724,105 @@
         : null;
     }
 
+    function isExampleHeadingLabel(label) {
+      return label === "example" || label === "examples" || label === "exemple" || label === "exemples";
+    }
+
+    function isHeadingElement(node) {
+      return !!(node && node.nodeType === Node.ELEMENT_NODE && /^H[1-6]$/.test(node.tagName));
+    }
+
+    function headingLevel(node) {
+      return isHeadingElement(node) ? Number(node.tagName.slice(1)) : 0;
+    }
+
+    function normalizeLooseText(text) {
+      var value = String(text || "").replace(/\u00a0/g, " ");
+      if (typeof value.normalize === "function") {
+        value = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      return value.toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function isExampleBoilerplateParagraph(node) {
+      if (!node || node.tagName !== "P" || node.querySelector("img, table, iframe, video")) {
+        return false;
+      }
+
+      var text = normalizeLooseText(node.textContent);
+      return (
+        /^all these exemple?s? are snippets png\b/.test(text) &&
+        text.indexOf("drop these snippet onto the block diagram") >= 0 &&
+        text.indexOf("depicted code added to your vi") >= 0
+      );
+    }
+
+    function hasMeaningfulExampleContent(node) {
+      if (!node) {
+        return false;
+      }
+
+      if (isHeadingElement(node)) {
+        return true;
+      }
+
+      if (node.matches("table, ul, ol, pre, blockquote, figure, hr")) {
+        return true;
+      }
+
+      if (node.matches("p, div")) {
+        if (node.querySelector("img, table, iframe, video, ul, ol, pre, blockquote, figure")) {
+          return true;
+        }
+        return normalizeLooseText(node.textContent).length > 0;
+      }
+
+      return normalizeLooseText(node.textContent).length > 0 || node.children.length > 0;
+    }
+
+    function pruneEmptyExampleSections(root) {
+      if (!root) {
+        return;
+      }
+
+      Array.prototype.slice.call(root.querySelectorAll("h1, h2, h3, h4, h5, h6")).forEach(function (heading) {
+        if (!root.contains(heading) || !isExampleHeadingLabel(normalizeHeadingLabel(heading.textContent))) {
+          return;
+        }
+
+        var level = headingLevel(heading);
+        var sectionNodes = [];
+        var sibling = heading.nextElementSibling;
+        while (sibling) {
+          if (isHeadingElement(sibling) && headingLevel(sibling) <= level) {
+            break;
+          }
+          sectionNodes.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        var meaningfulNodes = sectionNodes.filter(hasMeaningfulExampleContent);
+        if (!meaningfulNodes.length) {
+          heading.remove();
+          sectionNodes.forEach(function (node) {
+            node.remove();
+          });
+          return;
+        }
+
+        var remainingContent = meaningfulNodes.filter(function (node) {
+          return !isExampleBoilerplateParagraph(node);
+        });
+
+        if (!remainingContent.length) {
+          heading.remove();
+          sectionNodes.forEach(function (node) {
+            node.remove();
+          });
+        }
+      });
+    }
+
     function currentRenderedDocPath() {
       var hash = window.location.hash || "#/README.md";
       var route = hash.charAt(0) === "#" ? hash.slice(1) : hash;
@@ -2662,6 +2761,7 @@
                 }
               });
 
+                pruneEmptyExampleSections(document.querySelector(".markdown-section"));
                 enhanceRenderedYouTubeLinks(document.querySelector(".markdown-section"));
                 enhanceRenderedYouTubeLinks(document.querySelector(".cover-main"));
                 enhanceParameterImages(document.querySelector(".markdown-section"));
