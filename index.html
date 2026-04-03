@@ -1564,6 +1564,15 @@
         : null;
     }
 
+    function currentRenderedDocPath() {
+      var hash = window.location.hash || "#/README.md";
+      var route = hash.charAt(0) === "#" ? hash.slice(1) : hash;
+      if (route.indexOf("?id=") === 0) {
+        route = decodeURIComponent(route.slice(4));
+      }
+      return normalizeDocPath(route || "/README.md");
+    }
+
     function isExcludedStandaloneIllustrationContext(img) {
       return !!(
         img &&
@@ -1612,6 +1621,10 @@
         return "example";
       }
 
+      if (currentRenderedDocPath().indexOf("/hardware-compatibility/") >= 0) {
+        return "hardware-compatibility";
+      }
+
       return "standalone";
     }
 
@@ -1636,6 +1649,10 @@
         return Math.min(640, Math.max(360, naturalWidth));
       }
 
+      if (mode === "hardware-compatibility") {
+        return Math.min(960, Math.max(820, naturalWidth || 0));
+      }
+
       if (naturalHeight <= 90 || ratio >= 3.6) {
         return Math.min(360, Math.max(240, naturalWidth));
       }
@@ -1655,31 +1672,38 @@
       return Math.min(360, Math.max(240, naturalWidth));
     }
 
+    function applyStandaloneIllustrationSizing(img, mode) {
+      var targetWidth = computeStandaloneIllustrationWidth(img, mode);
+      if (!targetWidth) {
+        return;
+      }
+
+      img.dataset.graiphicContentIllustrationEnhanced = mode;
+      img.classList.add("graiphic-content-illustration");
+      img.style.width = String(targetWidth) + "px";
+      img.style.height = "auto";
+      img.style.maxWidth = "100%";
+    }
+
     function enhanceContentIllustrationImages(root) {
       if (!root) {
         return;
       }
 
       root.querySelectorAll("img").forEach(function (img) {
-        if (img.dataset.graiphicContentIllustrationEnhanced) {
-          return;
-        }
-
         var mode = getStandaloneIllustrationMode(root, img);
         if (!mode) {
           return;
         }
 
-        var targetWidth = computeStandaloneIllustrationWidth(img, mode);
-        if (!targetWidth) {
-          return;
-        }
+        applyStandaloneIllustrationSizing(img, mode);
 
-        img.dataset.graiphicContentIllustrationEnhanced = mode;
-        img.classList.add("graiphic-content-illustration");
-        img.style.width = String(targetWidth) + "px";
-        img.style.height = "auto";
-        img.style.maxWidth = "100%";
+        if (!img.dataset.graiphicContentIllustrationBound) {
+          img.dataset.graiphicContentIllustrationBound = "1";
+          img.addEventListener("load", function () {
+            applyStandaloneIllustrationSizing(img, mode);
+          });
+        }
       });
     }
 
